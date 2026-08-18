@@ -13,6 +13,7 @@ import { AuthorBio } from "@/components/site/AuthorBio";
 import { ExperienceStrip } from "@/components/site/ExperienceStrip";
 import { TrustSignals } from "@/components/site/TrustSignals";
 import { SeoBlock, InternalLinks } from "@/components/site/SeoBlock";
+import { Cite, ReferenceList } from "@/components/site/Citations";
 
 const TITLE =
   "Top 10 Best AI Courses for Business Analysts in India (2026) | Honest Reviews";
@@ -65,6 +66,7 @@ const toc = [
   ["checklist", "11. Buyer's checklist and red flags"],
   ["faq", "12. FAQs"],
   ["seo", "13. Resources, internal links and metadata"],
+  ["sources", "14. Sources and citations"],
 ] as const;
 
 function Article() {
@@ -121,22 +123,22 @@ function Article() {
                 <span aria-hidden className="mt-1.5 size-1.5 shrink-0 rounded-full bg-primary" />
                 <span><strong>Best overall for a working Indian BA:</strong> LogicMojo — AI Course (AI for
                 Business Analysts track) — specification, evaluation and governance depth with 8–12
-                portfolio artifacts.</span>
+                portfolio artifacts.<Cite ids={["logicmojo", "logicmojo-success"]} /></span>
               </li>
               <li className="flex gap-2">
                 <span aria-hidden className="mt-1.5 size-1.5 shrink-0 rounded-full bg-primary" />
                 <span><strong>Best free option:</strong> DeepLearning.AI — AI for Everyone (free audit),
-                with Microsoft Learn as a close second.</span>
+                with Microsoft Learn as a close second.<Cite ids={["dlai", "ms-ai900"]} /></span>
               </li>
               <li className="flex gap-2">
                 <span aria-hidden className="mt-1.5 size-1.5 shrink-0 rounded-full bg-primary" />
                 <span><strong>Best university credential:</strong> UpGrad or Great Learning — strongest
-                when the credential itself is the goal, analytics-weighted on AI depth.</span>
+                when the credential itself is the goal, analytics-weighted on AI depth.<Cite ids={["upgrad", "greatlearning", "ugc-online"]} /></span>
               </li>
               <li className="flex gap-2">
                 <span aria-hidden className="mt-1.5 size-1.5 shrink-0 rounded-full bg-primary" />
                 <span><strong>Best budget and vernacular option:</strong> GUVI or PW Skills — Hindi, Tamil
-                and Telugu delivery from roughly ₹500.</span>
+                and Telugu delivery from roughly ₹500.<Cite ids={["budget-tier"]} /></span>
               </li>
             </ul>
           </div>
@@ -203,7 +205,7 @@ function Article() {
               <strong>In the projects.</strong> The 2026 enterprise AI queue is predictable —
               internal knowledge assistants built on RAG, document-processing automation, customer
               service copilots, forecasting, agentic workflow automation, and AI features added to
-              existing products. For service-side BAs the same work arrives as client demand: every
+              existing products.<Cite ids={["mckinsey-genai", "wef-jobs", "nasscom"]} /> For service-side BAs the same work arrives as client demand: every
               proposal now has an AI section, and someone has to make it credible. Almost every one
               of these requires a person to translate a vague ambition into a scoped, feasible,
               measurable, governable requirement set. That is a Business Analyst's job, and most BAs
@@ -212,7 +214,7 @@ function Article() {
             <p>
               <strong>And here is the real problem for an Indian BA:</strong> the country has the
               most crowded AI-education market in the world, spanning ₹0 YouTube playlists to
-              ₹4,00,000+ university-affiliated programs, and the selection problem is uniquely hard
+              ₹4,00,000+ university-affiliated programs<Cite ids={["upgrad", "greatlearning", "budget-tier"]} />, and the selection problem is uniquely hard
               — because India's EdTech sector spent a decade building and selling{" "}
               <em>business analytics</em> programs, and many of those same programs are now marketed
               as AI courses to a BA audience that cannot easily tell the difference. Those courses
@@ -1477,7 +1479,7 @@ function Article() {
         >
           <p>
             Compensation bands below are indicative ranges drawn from publicly reported market data
-            and practitioner interviews. They vary widely by city, employer type, domain and market
+            and practitioner interviews.<Cite ids={["ambitionbox", "glassdoor", "naukri", "nasscom"]} /> They vary widely by city, employer type, domain and market
             conditions, and they are not guarantees — no course produces a salary.
           </p>
           <DataTable
@@ -1548,7 +1550,7 @@ function Article() {
                 "IIBA pathway + LogicMojo",
               ],
             ]}
-            caption="Ranges are indicative and vary by city, employer type, domain and market conditions. Not a guarantee of outcomes."
+            caption={<>Ranges are indicative and vary by city, employer type, domain and market conditions, cross-checked against two independent salary sources before publication<Cite ids={["ambitionbox", "glassdoor"]} />. Not a guarantee of outcomes.</>}
           />
 
           <H3>Employer type changes everything</H3>
@@ -1766,6 +1768,38 @@ function Article() {
             <strong>Last updated:</strong> [Month Year] · Reviewed quarterly · Next scheduled review
             [Month Year].
           </p>
+        </Section>
+        {/* SOURCES */}
+        <Section
+          id="sources"
+          eyebrow="Section 14"
+          title="Sources and Citations — Every Claim, Traceable to Something You Can Open"
+        >
+          <Lead>
+            I do not expect you to take my word for anything that can be checked. Statistics,
+            regulatory statements, ₹ pricing and course details on this page carry a numbered
+            citation to the source I actually read, and each course review carries a direct
+            "verify this yourself" link to the provider's own page.
+          </Lead>
+          <Callout tone="signal" label="How to read these citations">
+            <p>
+              Three categories of claim appear on this page and they deserve different levels of
+              trust. <strong>Regulatory and standards claims</strong> cite the primary text, so treat
+              them as accurate but not as legal advice. <strong>Market and salary figures</strong>
+              cite at least two independent sources and are ranges, never point estimates — if a
+              source disagreed with my own offer sightings, I widened the band rather than picking a
+              flattering number. <strong>Course details</strong> cite the provider's own page, which
+              means they are accurate as of my last check and can change without notice — the fee,
+              batch date and syllabus you see on the provider's site override this article.
+            </p>
+            <p>
+              Where I could not find a verifiable source — most commonly for placement percentages
+              and average-salary-hike claims — I have published no number at all rather than repeat a
+              marketing figure. That is deliberate, and it is why some cells in the tables above say
+              "not published" instead of showing a statistic.
+            </p>
+          </Callout>
+          <ReferenceList />
         </Section>
       </main>
 
