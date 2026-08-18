@@ -14,6 +14,7 @@ import { ExperienceStrip } from "@/components/site/ExperienceStrip";
 import { TrustSignals } from "@/components/site/TrustSignals";
 import { SeoBlock, InternalLinks } from "@/components/site/SeoBlock";
 import { Cite, ReferenceList } from "@/components/site/Citations";
+import { ScoringRubric } from "@/components/site/ScoringRubric";
 
 const TITLE =
   "Top 10 Best AI Courses for Business Analysts in India (2026) | Honest Reviews";
@@ -55,6 +56,7 @@ const toc = [
   ["logicmojo", "3. Why LogicMojo is ranked #1"],
   ["reviews", "4. The full reviews, rank by rank"],
   ["methodology", "5. Methodology and disclosure"],
+  ["rubric", "5a. Transparent scoring rubric"],
   ["reviewers", "6. Author and reviewers"],
   ["research", "6b. How I researched and ranked"],
   ["choose", "6c. How to choose as a beginner"],
@@ -1126,6 +1128,23 @@ function Article() {
             <li>Added the employer-type and city-concentration sections to the career mapping.</li>
             <li>Rewrote the coding-load scale so both excessive and insufficient technical content are penalised.</li>
           </ul>
+        </Section>
+
+        {/* SCORING RUBRIC */}
+        <Section
+          id="rubric"
+          eyebrow="Section 5a"
+          title="The Transparent Scoring Rubric: Every Weight, and the Evidence Behind Every Score"
+        >
+          <p>
+            A ranking is only as trustworthy as the arithmetic under it. So this is the full rubric I
+            scored all 31 shortlisted programmes against — the six criteria, the weight each carries,
+            <em> why</em> I chose that weight after fifteen years of BA delivery work, the specific
+            evidence I gathered for each criterion, and the 1–10 anchors that decide what a score is
+            allowed to mean. Expand any criterion to see the anchors and the automatic caps that stop a
+            strong brand from buying a high score.
+          </p>
+          <ScoringRubric />
         </Section>
 
         {/* REVIEWERS */}

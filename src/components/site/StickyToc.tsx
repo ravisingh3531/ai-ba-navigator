@@ -21,6 +21,7 @@ const items: Item[] = [
     child: true,
   })),
   { id: "methodology", label: "Methodology" },
+  { id: "rubric", label: "Transparent scoring rubric" },
   { id: "reviewers", label: "Author & reviewers" },
   { id: "research", label: "Research & ranking method" },
   { id: "choose", label: "How to choose" },
