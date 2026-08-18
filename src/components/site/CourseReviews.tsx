@@ -2,6 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { Callout } from "./Prose";
 import { allTopics, beginnerByRank, type Coverage } from "./beginnerDetails";
 import { fieldNoteByRank } from "./fieldNotes";
+import { VerifyLinks } from "./Citations";
 import { Star, NotebookPen, GraduationCap, Users, Route as RouteIcon, Briefcase, FolderGit2 } from "lucide-react";
 
 type Review = {
@@ -517,6 +518,8 @@ export function CourseReviews() {
               {r.skipIf}
             </p>
           </div>
+
+          <VerifyLinks rank={r.rank} />
 
           <AuthorFieldNote rank={r.rank} />
 
