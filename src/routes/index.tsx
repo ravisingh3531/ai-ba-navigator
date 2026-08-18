@@ -1315,7 +1315,7 @@ function Article() {
         </Section>
 
         {/* FAQ */}
-        <Section id="faq" eyebrow="Section 11" title="AI Courses for Business Analysts in India — FAQs">
+        <Section id="faq" eyebrow="Section 11" title="AI Courses for Business Analysts in India — FAQs" blue>
           <Faq />
           <Callout tone="signal" label="Standing note">
             <p>
