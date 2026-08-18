@@ -778,7 +778,7 @@ function Article() {
                 "Tier-2/3 learners and cost-sensitive BAs; Hindi/Tamil/Telugu options exist here",
               ],
             ]}
-            caption="Indicative bands as of the last update. Confirm on the provider's page before enrolling."
+            
           />
 
           <H3>Table 2 — The AI-for-BA competency scorecard</H3>
