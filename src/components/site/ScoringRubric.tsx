@@ -288,7 +288,7 @@ export function ScoringRubric() {
         ))}
       </div>
 
-      <Callout tone="info" label="How a final score is produced">
+      <Callout tone="signal" label="How a final score is produced">
         <p>
           Each criterion is scored 1–10 strictly against the anchors above, using only evidence I could
           read, observe or verify myself. The score is multiplied by its weight and summed, then the
