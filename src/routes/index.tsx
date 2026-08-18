@@ -675,6 +675,7 @@ function Article() {
               "Best for",
             ]}
             firstColWidth="min-w-[230px]"
+            caption={<>Every price, duration and syllabus claim in this table was read off the provider's own page at my last check<Cite ids={["logicmojo", "iiba", "ms-ai900", "dlai", "ibm", "simplilearn", "upgrad", "greatlearning", "intellipaat", "budget-tier"]} />. Providers change fees and batch structures without notice — open the citation before you pay.</>}
             rows={[
               [
                 "1 · LogicMojo — AI Course (AI for BA track)",
@@ -1029,6 +1030,7 @@ function Article() {
                 "For leadership positioning, not hands-on BA capability",
               ],
             ]}
+            caption={<>₹ tiers are built from current provider list prices across the market<Cite ids={["dlai", "budget-tier", "intellipaat", "simplilearn", "upgrad", "greatlearning"]} />, excluding GST and EMI interest. University-affiliated does not mean UGC-recognised degree equivalence — check what the credential actually is<Cite ids={["ugc-online"]} />.</>}
           />
           <p>
             For an Indian BA the ROI calculation differs from an engineer's. You are not buying a
