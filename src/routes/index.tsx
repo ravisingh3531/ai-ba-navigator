@@ -7,6 +7,9 @@ import { DecisionTree } from "@/components/site/DecisionTree";
 import { Faq, faqs } from "@/components/site/Faq";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { StickyToc } from "@/components/site/StickyToc";
+import { LogicMojoSpotlight } from "@/components/site/LogicMojoSpotlight";
+import { AuthorBio } from "@/components/site/AuthorBio";
+import { SeoBlock, InternalLinks } from "@/components/site/SeoBlock";
 
 const TITLE =
   "Top 10 Best AI Courses for Business Analysts in India (2026) | Honest Reviews";
@@ -44,15 +47,17 @@ export const Route = createFileRoute("/")({
 const toc = [
   ["reality-check", "1. The reality check: five course categories"],
   ["top-10", "2. Top 10 picks and comparison tables"],
-  ["reviews", "3. The full reviews, rank by rank"],
-  ["methodology", "4. Methodology and disclosure"],
-  ["reviewers", "5. Who reviewed this"],
-  ["skills", "6. What a BA actually needs to learn"],
-  ["careers", "7. AI career paths in India"],
-  ["roadmap", "8. Your 90-day roadmap"],
-  ["decision-tree", "9. Find your course in 60 seconds"],
-  ["checklist", "10. Buyer's checklist and red flags"],
-  ["faq", "11. FAQs"],
+  ["logicmojo", "3. Why LogicMojo is ranked #1"],
+  ["reviews", "4. The full reviews, rank by rank"],
+  ["methodology", "5. Methodology and disclosure"],
+  ["reviewers", "6. Author and reviewers"],
+  ["skills", "7. What a BA actually needs to learn"],
+  ["careers", "8. AI career paths in India"],
+  ["roadmap", "9. Your 90-day roadmap"],
+  ["decision-tree", "10. Find your course in 60 seconds"],
+  ["checklist", "11. Buyer's checklist and red flags"],
+  ["faq", "12. FAQs"],
+  ["seo", "13. Resources, internal links and metadata"],
 ] as const;
 
 function Article() {
@@ -875,8 +880,11 @@ function Article() {
           </p>
         </Section>
 
+        {/* LOGICMOJO SPOTLIGHT */}
+        <LogicMojoSpotlight />
+
         {/* REVIEWS */}
-        <Section id="reviews" eyebrow="Section 3" title="The Full Reviews, Rank by Rank">
+        <Section id="reviews" eyebrow="Section 4" title="The Full Reviews, Rank by Rank">
           <p>
             Each review states the actual coding load, the artifacts produced, honest limitations,
             and at least one reader for whom a competitor beats our own course.
@@ -890,7 +898,7 @@ function Article() {
 
       <main className="mx-auto max-w-3xl px-5">
         {/* METHODOLOGY */}
-        <Section id="methodology" eyebrow="Section 4" title="Methodology, Evidence and Commercial Disclosure" blue>
+        <Section id="methodology" eyebrow="Section 5" title="Methodology, Evidence and Commercial Disclosure" blue>
           <Callout tone="warn" label="Disclosure — stated twice, deliberately">
             <p>
               LogicMojo publishes this comparison and offers a competing course, ranked first. Every
@@ -951,12 +959,14 @@ function Article() {
         </Section>
 
         {/* REVIEWERS */}
-        <Section id="reviewers" eyebrow="Section 5" title="Who Reviewed This Comparison">
+        <Section id="reviewers" eyebrow="Section 6" title="Author, Reviewers and Editorial Accountability">
           <p>
             Five practitioners reviewed the scoring dimensions and the competency scorecard. They did
             not review or approve the ranking order, and their participation is not an endorsement of
             any course.
           </p>
+          <AuthorBio />
+          <H3>Expert reviewers</H3>
           <ExpertCarousel />
         </Section>
 

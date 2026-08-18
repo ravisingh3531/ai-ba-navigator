@@ -1,5 +1,4 @@
 import { Link2, Search, Tags, Image as ImageIcon, Code2 } from "lucide-react";
-import { H4 } from "./Prose";
 
 const kv: { k: string; v: string }[] = [
   {
@@ -195,5 +194,3 @@ export function InternalLinks() {
     </div>
   );
 }
-
-export { H4 };
