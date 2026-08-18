@@ -189,9 +189,22 @@
 /* Subtle paper texture used for hero and pull-out blocks */
 @utility bg-grain {
   background-image:
-    radial-gradient(circle at 12% 8%, oklch(0.52 0.19 258 / 0.16), transparent 46%),
-    radial-gradient(circle at 88% 0%, oklch(0.62 0.17 232 / 0.14), transparent 44%),
-    linear-gradient(to bottom, oklch(0.97 0.02 250 / 0.9), transparent 70%);
+    radial-gradient(circle at 12% 8%, oklch(0.48 0.21 258 / 0.18), transparent 46%),
+    radial-gradient(circle at 88% 0%, oklch(0.58 0.19 232 / 0.16), transparent 44%),
+    radial-gradient(circle at 50% 100%, oklch(0.48 0.21 258 / 0.1), transparent 50%),
+    linear-gradient(to bottom, oklch(0.96 0.025 255 / 0.95), oklch(0.985 0.006 255 / 0.85) 70%);
+}
+
+@utility bg-blue-section {
+  background-image:
+    radial-gradient(circle at 0% 0%, oklch(0.48 0.21 258 / 0.08), transparent 40%),
+    radial-gradient(circle at 100% 100%, oklch(0.58 0.19 250 / 0.07), transparent 42%),
+    linear-gradient(to bottom, oklch(0.98 0.01 255), oklch(0.99 0.005 255));
+}
+
+@utility blue-glow {
+  background: radial-gradient(circle, oklch(0.48 0.21 258 / 0.18), transparent 70%);
+  filter: blur(40px);
 }
 
 @utility bg-ledger {
