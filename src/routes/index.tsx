@@ -57,7 +57,7 @@ const toc = [
 function Article() {
   return (
     <div className="min-h-screen bg-background">
-      <header className="relative overflow-hidden border-b border-border bg-grain">
+      <header className="dark relative overflow-hidden border-b border-border bg-navy-grid text-white">
         <div
           aria-hidden
           className="pointer-events-none absolute -right-20 -top-28 size-[32rem] rounded-full bg-primary/15 blur-3xl"
