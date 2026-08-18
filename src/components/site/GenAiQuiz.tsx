@@ -128,7 +128,7 @@ type Result = {
   anchor: string;
 };
 
-const results: Record<string, Result> = {
+const results = {
   logicmojo: {
     id: "logicmojo",
     name: "LogicMojo AI & ML Course (GenAI track)",
@@ -274,7 +274,7 @@ const results: Record<string, Result> = {
     ctaLabel: "Read the full review →",
     anchor: "#rank-10",
   },
-};
+} satisfies Record<string, Result>;
 
 function recommend(a: Required<Answers>): Result {
   const wantsPlacement = a.placement === "must";
