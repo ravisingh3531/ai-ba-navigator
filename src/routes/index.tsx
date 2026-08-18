@@ -343,6 +343,7 @@ function Article() {
           id="reality-check"
           eyebrow="Section 1"
           title={`What "AI Course for Business Analysts" Actually Means in 2026 (And How to Spot the Four Fakes)`}
+          blue
         >
           <p>
             Almost every provider in India now markets an AI-for-BA offering. In our review of 130+
