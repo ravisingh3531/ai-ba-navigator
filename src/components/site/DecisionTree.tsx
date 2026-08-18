@@ -139,21 +139,26 @@ export function DecisionTree() {
   const outcome = done ? resolve(answers as Required<Answers>) : null;
 
   return (
-    <div className="surface-card my-8 p-6 sm:p-8">
+    <div className="surface-card my-8 border-primary/20 bg-gradient-to-br from-card to-primary/[0.04] p-6 sm:p-8">
       <div className="flex items-center justify-between gap-4">
-        <p className="eyebrow">
+        <p className="eyebrow inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/8 px-3 py-1 text-primary">
           {done ? "Your result" : `Question ${step + 1} of ${questions.length}`}
         </p>
         {Object.keys(answers).length > 0 ? (
-          <Button variant="ghost" size="sm" onClick={() => setAnswers({})}>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => setAnswers({})}
+            className="border-primary/25 text-primary hover:bg-primary/10 hover:text-primary"
+          >
             <RotateCcw className="mr-1.5 size-3.5" /> Start again
           </Button>
         ) : null}
       </div>
 
-      <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-muted">
+      <div className="mt-4 h-2 w-full overflow-hidden rounded-full bg-muted/80 ring-1 ring-primary/10">
         <div
-          className="h-full rounded-full bg-gradient-to-r from-primary to-accent transition-all duration-500"
+          className="h-full rounded-full bg-gradient-to-r from-primary via-primary to-accent shadow-sm transition-all duration-500"
           style={{
             width: `${((done ? questions.length : step) / questions.length) * 100}%`,
           }}
@@ -170,7 +175,7 @@ export function DecisionTree() {
                 onClick={() =>
                   setAnswers((prev) => ({ ...prev, [questions[step]!.key]: opt.value }))
                 }
-                className="rounded-xl border border-border bg-background px-4 py-3 text-left text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/50 hover:bg-primary/6 hover:text-primary hover:shadow-card"
+                className="rounded-xl border border-primary/15 bg-background px-4 py-3 text-left text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/60 hover:bg-primary/10 hover:text-primary hover:shadow-card"
               >
                 {opt.label}
               </button>
