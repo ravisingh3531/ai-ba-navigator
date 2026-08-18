@@ -54,8 +54,8 @@ export function ExpertCarousel() {
   const go = (delta: number) => setIndex((i) => (i + delta + experts.length) % experts.length);
 
   return (
-    <div className="surface-card my-8 overflow-hidden">
-      <div className="flex items-center justify-between gap-4 border-b border-primary/15 bg-primary/6 px-5 py-3">
+    <div className="surface-card my-8 overflow-hidden border-primary/20 bg-gradient-to-br from-card to-primary/[0.04]">
+      <div className="flex items-center justify-between gap-4 border-b border-primary/20 bg-gradient-to-r from-primary/10 to-accent/8 px-5 py-3">
         <p className="eyebrow text-secondary-foreground">
           Reviewed by practitioners · {index + 1} / {experts.length}
         </p>
@@ -65,17 +65,24 @@ export function ExpertCarousel() {
             size="icon"
             aria-label="Previous reviewer"
             onClick={() => go(-1)}
+            className="border-primary/25 text-primary hover:bg-primary/10 hover:text-primary"
           >
             <ChevronLeft className="size-4" />
           </Button>
-          <Button variant="outline" size="icon" aria-label="Next reviewer" onClick={() => go(1)}>
+          <Button
+            variant="outline"
+            size="icon"
+            aria-label="Next reviewer"
+            onClick={() => go(1)}
+            className="border-primary/25 text-primary hover:bg-primary/10 hover:text-primary"
+          >
             <ChevronRight className="size-4" />
           </Button>
         </div>
       </div>
 
       <div className="flex flex-col gap-5 p-6 sm:flex-row">
-        <div className="flex size-20 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/15 to-accent/20 font-display text-xl font-semibold text-primary ring-1 ring-primary/25">
+        <div className="flex size-20 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/20 to-accent/25 font-display text-xl font-semibold text-primary shadow-inner ring-1 ring-primary/30">
           {expert.initials}
         </div>
         <div>
