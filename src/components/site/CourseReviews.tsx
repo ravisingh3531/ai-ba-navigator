@@ -1,5 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Callout } from "./Prose";
+import { allTopics, beginnerByRank, type Coverage } from "./beginnerDetails";
+import { Star, GraduationCap, Users, Route as RouteIcon, Briefcase, FolderGit2 } from "lucide-react";
 
 type Review = {
   rank: number;
@@ -287,7 +289,130 @@ export const reviewIndex = reviews.map((r) => ({
 
 
 
+const coverageTone: Record<Coverage, string> = {
+  deep: "border-good/35 bg-good/12 text-good",
+  some: "border-warn/35 bg-warn/12 text-warn",
+  none: "border-border bg-muted/60 text-muted-foreground line-through decoration-muted-foreground/50",
+};
+
+function Stars({ n }: { n: number }) {
+  return (
+    <span className="inline-flex items-center gap-0.5" aria-label={`${n} out of 5 for beginner readiness`}>
+      {[1, 2, 3, 4, 5].map((i) => (
+        <Star
+          key={i}
+          className={i <= n ? "size-3.5 fill-accent text-accent" : "size-3.5 text-muted-foreground/40"}
+          aria-hidden
+        />
+      ))}
+      <span className="ml-1 font-mono text-xs text-muted-foreground">{n}/5</span>
+    </span>
+  );
+}
+
+function BeginnerPanel({ rank }: { rank: number }) {
+  const d = beginnerByRank.get(rank);
+  if (!d) return null;
+  return (
+    <div className="mt-6 rounded-xl border border-primary/25 bg-gradient-to-br from-primary/[0.06] to-accent/[0.04] p-5 sm:p-6">
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <p className="flex items-center gap-2 font-semibold">
+          <GraduationCap className="size-4 text-primary" aria-hidden />
+          Beginner readiness and placement deep dive
+        </p>
+        <Stars n={d.beginnerStars} />
+      </div>
+      <p className="mt-3 text-sm leading-relaxed">{d.beginnerVerdict}</p>
+
+      <dl className="mt-5 grid gap-4 text-sm sm:grid-cols-2">
+        {[
+          ["Prerequisites", d.prerequisites],
+          ["Foundational ramp-up (Python, ML, DL)", d.rampUp],
+          ["Step-by-step teaching method", d.teaching],
+          ["Learning support for beginners", d.support],
+          ["Mentorship access", d.mentorship],
+          ["Industry readiness — tools and datasets", d.industryReadiness],
+        ].map(([k, v]) => (
+          <div key={k} className="rounded-lg border border-border/70 bg-card/70 p-4">
+            <dt className="eyebrow text-primary">{k}</dt>
+            <dd className="mt-1.5 leading-relaxed text-muted-foreground">{v}</dd>
+          </div>
+        ))}
+      </dl>
+
+      <p className="eyebrow mt-6 flex items-center gap-2 text-primary">
+        <FolderGit2 className="size-3.5" aria-hidden /> Projects and capstone work
+      </p>
+      <ul className="mt-2 grid gap-2 text-sm sm:grid-cols-2">
+        {d.projects.map((pj) => (
+          <li key={pj} className="flex gap-2">
+            <span aria-hidden className="mt-1.5 size-1.5 shrink-0 rounded-full bg-primary/60" />
+            <span className="leading-relaxed">{pj}</span>
+          </li>
+        ))}
+      </ul>
+
+      <p className="eyebrow mt-6 flex items-center gap-2 text-primary">
+        <RouteIcon className="size-3.5" aria-hidden /> GenAI curriculum depth for beginners
+      </p>
+      <div className="mt-2 flex flex-wrap gap-1.5">
+        {allTopics.map((topic) => {
+          const cov = d.topics[topic] ?? "none";
+          return (
+            <span
+              key={topic}
+              className={`rounded-full border px-2.5 py-1 text-xs ${coverageTone[cov]}`}
+              title={cov === "deep" ? "Covered in depth" : cov === "some" ? "Partially covered" : "Not covered"}
+            >
+              {topic}
+            </span>
+          );
+        })}
+      </div>
+      <p className="mt-2 text-xs text-muted-foreground">
+        Solid = covered in depth · amber = partial · struck through = not covered. Mapped from published
+        syllabi at the time of writing; providers revise curricula frequently.
+      </p>
+
+      <div className="mt-6 rounded-xl border border-primary/25 bg-card/80 p-5">
+        <p className="flex flex-wrap items-center gap-2 font-semibold">
+          <Briefcase className="size-4 text-primary" aria-hidden />
+          Placement and job assistance
+          <span className="rounded-full border border-primary/30 bg-primary/10 px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wider text-primary">
+            {d.placement.model}
+          </span>
+        </p>
+        <dl className="mt-4 grid gap-3 text-sm sm:grid-cols-2">
+          {[
+            ["Hiring partners", d.placement.partners],
+            ["Placement rate claim", d.placement.rate],
+            ["Mock interview rounds", d.placement.mocks],
+            ["Resume building", d.placement.resume],
+            ["LinkedIn optimisation", d.placement.linkedin],
+            ["Career counselling", d.placement.counselling],
+            ["Post-course support duration", d.placement.duration],
+          ].map(([k, v]) => (
+            <div key={k}>
+              <dt className="eyebrow text-muted-foreground">{k}</dt>
+              <dd className="mt-1 leading-relaxed">{v}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+
+      <p className="mt-5 flex items-start gap-2 rounded-lg border border-signal/30 bg-signal/[0.07] px-4 py-3 text-sm">
+        <Users className="mt-0.5 size-4 shrink-0 text-signal" aria-hidden />
+        <span className="leading-relaxed">
+          <strong>How to verify learner feedback: </strong>
+          {d.feedback}
+        </span>
+      </p>
+    </div>
+  );
+}
+
 export function CourseReviews() {
+
   return (
     <div className="mt-8 space-y-12">
       {reviews.map((r) => (
@@ -365,6 +490,8 @@ export function CourseReviews() {
               {r.skipIf}
             </p>
           </div>
+
+          <BeginnerPanel rank={r.rank} />
 
           {r.rank === 1 ? (
             <Callout tone="signal" label="Disclosure">

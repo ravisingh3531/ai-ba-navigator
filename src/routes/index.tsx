@@ -7,6 +7,7 @@ import { DecisionTree } from "@/components/site/DecisionTree";
 import { Faq, faqs } from "@/components/site/Faq";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { StickyToc } from "@/components/site/StickyToc";
+import { GenAiQuiz } from "@/components/site/GenAiQuiz";
 import { LogicMojoSpotlight } from "@/components/site/LogicMojoSpotlight";
 import { AuthorBio } from "@/components/site/AuthorBio";
 import { SeoBlock, InternalLinks } from "@/components/site/SeoBlock";
@@ -45,12 +46,16 @@ export const Route = createFileRoute("/")({
 });
 
 const toc = [
+  ["problem", "0. Why most GenAI courses fail beginners"],
   ["reality-check", "1. The reality check: five course categories"],
   ["top-10", "2. Top 10 picks and comparison tables"],
   ["logicmojo", "3. Why LogicMojo is ranked #1"],
   ["reviews", "4. The full reviews, rank by rank"],
   ["methodology", "5. Methodology and disclosure"],
   ["reviewers", "6. Author and reviewers"],
+  ["research", "6b. How I researched and ranked"],
+  ["choose", "6c. How to choose as a beginner"],
+  ["beyond-marketing", "6d. Beyond the marketing"],
   ["skills", "7. What a BA actually needs to learn"],
   ["careers", "8. AI career paths in India"],
   ["roadmap", "9. Your 90-day roadmap"],
@@ -348,6 +353,153 @@ function Article() {
             Level 3, with a visible path to 4 and 5. That was the bar used for this ranking.
           </Caption>
         </section>
+
+
+        {/* PROBLEM / COST / SOLUTION */}
+        <Section
+          id="problem"
+          eyebrow="Section 0"
+          title="Why Most GenAI Courses in India Fail Beginners — And What Actually Works"
+        >
+          <H3>The problem: two failure modes, one victim</H3>
+          <p>
+            Almost every Generative AI (GenAI) course sold to Indian beginners fails in one of two
+            predictable ways. The first is <strong>too advanced too fast</strong>: the syllabus opens
+            with transformers, PyTorch and a Hugging Face notebook, on the unstated assumption that
+            you already write Python comfortably. A commerce graduate or a non-coding working
+            professional survives about two weeks of that before quietly stopping. The second is{" "}
+            <strong>too shallow to matter</strong>: ten hours of prompt tips and a tour of ChatGPT,
+            sold as an AI career programme, which leaves you with nothing a technical interviewer can
+            probe.
+          </p>
+          <p>
+            Both failures share a root cause. The course was designed around what is easy to teach,
+            not around the gap between where a beginner starts and what a 2026 GenAI job description
+            asks for — <strong>Large Language Models (LLMs)</strong>, retrieval-augmented generation
+            (<strong>RAG</strong>), orchestration frameworks like <strong>LangChain</strong>, vector
+            databases, <strong>AI agents</strong>, fine-tuning and deployment. Between those two poles
+            sits the sequence almost nobody teaches properly: Python, then data handling, then machine
+            learning intuition, then deep learning and NLP, and only then GenAI.
+          </p>
+          <DataTable
+            head={["Failure mode", "What it looks like in the brochure", "What happens in week 3", "Who it hurts most"]}
+            firstColWidth="min-w-[180px]"
+            rows={[
+              [
+                "Too advanced, no foundation",
+                "“Build an LLM app in 8 weeks”, with Python listed as “recommended”",
+                "You are debugging environment errors while the class moves to embeddings",
+                "Non-engineering graduates and non-coding professionals",
+              ],
+              [
+                "Too shallow, no depth",
+                "“Master GenAI in 10 hours”, heavy on prompt libraries",
+                "You can prompt, but cannot explain chunking, retrieval or evaluation",
+                "Freshers who believe they are now job-ready",
+              ],
+              [
+                "Analytics dressed as GenAI",
+                "A large analytics syllabus with two GenAI modules bolted on",
+                "Six months in, you have built dashboards and one chatbot demo",
+                "Career-switchers paying ₹1,00,000+ for the wrong category",
+              ],
+              [
+                "Placement theatre",
+                "“100% placement assistance” with a logo wall",
+                "You receive a job-portal login and a resume template",
+                "Anyone who bought primarily for the job outcome",
+              ],
+            ]}
+          />
+          <Caption>
+            The four failure modes we saw most often while screening programmes. Note that three of
+            the four are visible in the brochure if you know what to read for — the checklist in the
+            buyer's section below turns that into a test you can run in ten minutes.
+          </Caption>
+
+          <H3>The cost of getting it wrong</H3>
+          <p>
+            The fee is the smallest part of the loss. A ₹60,000 mistake also costs six to nine months
+            of evenings and weekends, which for a working professional is the scarcest resource they
+            have. It costs <strong>career momentum</strong>: you re-enter the market a year later
+            against candidates who spent that year shipping GenAI projects. And it costs something
+            harder to price — <strong>confidence</strong>. In our conversations with learners who had
+            abandoned an AI course, the most common self-diagnosis was "I'm not technical enough",
+            when the honest diagnosis was that the course skipped the foundation block they needed.
+          </p>
+          <div className="not-prose my-6 grid gap-4 sm:grid-cols-3">
+            {[
+              { k: "Money", v: "₹15,000 – ₹3,50,000 depending on tier, often on EMI you keep paying after you have stopped attending." },
+              { k: "Time", v: "6–12 months of weekends. The second attempt starts from a lower base of motivation, not a higher one." },
+              { k: "Momentum", v: "A year of no shipped projects reads on a CV exactly like a year of nothing." },
+            ].map((c) => (
+              <div key={c.k} className="surface-card border-destructive/25 bg-destructive/[0.04] p-5">
+                <p className="font-semibold text-destructive">{c.k}</p>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.v}</p>
+              </div>
+            ))}
+          </div>
+
+          <H3>My experience-based solution: research-backed recommendations</H3>
+          <p>
+            The filter that worked was simple and unglamorous: <em>does the course teach the
+            prerequisite before the topic that depends on it, and is there a real pipeline between
+            finishing and interviewing?</em> Applied to 130+ programmes, that filter eliminated most
+            of the market immediately — either the foundation block did not exist, or "placement
+            support" turned out to be a job board.
+          </p>
+          <Callout tone="good" label="Recommendation for beginners entering GenAI">
+            <p>
+              For a complete beginner in India whose goal is a GenAI job with real placement support,
+              the <strong>LogicMojo AI &amp; ML Course</strong> is the strongest fit in this
+              comparison. Three reasons, in order of weight: a{" "}
+              <strong>placement-first structure</strong> where mock interviews, capstone defence,
+              resume and LinkedIn work are scheduled parts of the programme rather than optional
+              extras; a <strong>GenAI-integrated curriculum built from scratch for zero-experience
+              learners</strong>, which teaches Python, SQL, ML intuition, deep learning and NLP
+              before opening LLMs, RAG, LangChain, vector databases, fine-tuning and AI agents; and a{" "}
+              <strong>step-by-step teaching method</strong> — concept, worked example, guided lab,
+              unassisted assignment, mentor review — that assumes nothing you have not been taught.
+            </p>
+            <p>
+              Verify it rather than trusting us: the provider publishes learner outcomes at{" "}
+              <a
+                href="https://logicmojo.com/success-story"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-primary underline decoration-primary/40 underline-offset-2"
+              >
+                logicmojo.com/success-story
+              </a>
+              . Open the profiles, check the role titles and start dates on LinkedIn, and message an
+              alumnus directly. That two-hour check is worth more than any percentage in any brochure,
+              including one in an article we publish.
+            </p>
+          </Callout>
+          <Callout tone="warn" label="Disclosure and evidence standard">
+            <p>
+              LogicMojo publishes this comparison, so the evidence standard here has to be higher, not
+              lower. We do not restate provider-reported placement percentages as facts, we do not
+              invent salary figures, company names or student quotes, and the honest limitations of
+              our own course are listed in Section 3 in the same detail as every competitor's. Where a
+              commercial detail is not yet published it appears as a placeholder — <code>₹XX,XXX</code>
+              , <code>X weeks</code>, <code>[Batch Dates]</code>, <code>[EMI Partner]</code> — rather
+              than as a guess.
+            </p>
+          </Callout>
+          <div className="not-prose my-6 grid gap-4 sm:grid-cols-3">
+            {[
+              { k: "What we could verify", v: "Published syllabi, module ordering, prerequisites, session formats, exam fees, list prices and last-updated dates." },
+              { k: "What we could not", v: "Any placement percentage. No provider in this comparison publishes an audited denominator, and we refuse to launder one." },
+              { k: "What you should do", v: "Ask for placement terms in writing, then verify three alumni on LinkedIn before paying a rupee." },
+            ].map((c) => (
+              <div key={c.k} className="surface-card border-primary/20 p-5">
+                <p className="font-semibold">{c.k}</p>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.v}</p>
+              </div>
+            ))}
+          </div>
+        </Section>
 
         {/* SECTION 2 */}
         <Section
@@ -970,6 +1122,224 @@ function Article() {
           <ExpertCarousel />
         </Section>
 
+
+        {/* RESEARCH METHOD, CHOOSING, MARKETING */}
+        <Section
+          id="research"
+          eyebrow="Section 5b"
+          title="How I Researched and Ranked These 10 GenAI Courses for Beginners"
+        >
+          <p>
+            The screening started with a long list of <strong>130+</strong> AI and GenAI programmes
+            purchasable from India — provider websites, Coursera and Udemy catalogues, vendor learning
+            paths, university-affiliated EdTech programmes and the vernacular tier. Anything without a
+            published syllabus, anything last updated before 2024, anything above the price ceiling
+            for an individual learner, and anything that turned out to be a webinar funnel was cut.
+            That left <strong>31 programmes</strong> read module by module, and the ten reviewed here.
+          </p>
+          <DataTable
+            head={["Parameter", "Weight", "How it was scored"]}
+            firstColWidth="min-w-[230px]"
+            rows={[
+              ["Beginner-friendliness and ramp-up structure", "20%", "Does a Python/ML foundation block exist, and does it run before GenAI topics?"],
+              ["GenAI curriculum depth for 2026 roles", "20%", "Coverage of LLMs, RAG, LangChain, vector DBs, agents, fine-tuning, deployment"],
+              ["Placement and job-assistance infrastructure", "20%", "Mock interviews, resume and LinkedIn work, counselling, written support terms"],
+              ["Hands-on project count and quality", "15%", "Portfolio-grade capstones over toy notebooks; real datasets over sample CSVs"],
+              ["Mentor credentials in GenAI", "10%", "Practitioners shipping GenAI work vs. full-time trainers"],
+              ["Learner feedback from beginners", "10%", "Cross-checked across platforms, weighted toward verifiable profiles"],
+              ["Affordability and financing", "5%", "₹ list price, GST treatment, EMI availability, refund terms"],
+            ]}
+          />
+          <H3>How long it took, and what was cross-checked</H3>
+          <p>
+            The review ran across roughly <strong>nine weeks</strong> of syllabus reading, sales-call
+            transcripts, trial sessions where available, and conversations with learners and hiring
+            managers. Four independent sources were checked for every shortlisted programme:
+          </p>
+          <ul>
+            <li>
+              <strong>LinkedIn alumni outcomes</strong> — searching the exact programme name, filtered
+              to profiles updated in the last 12 months, then counting how many hold GenAI-specific
+              titles rather than generic analyst titles. This is the single most useful check available
+              to a buyer and it costs nothing.
+            </li>
+            <li>
+              <strong>Review sites</strong> — read for patterns rather than scores. A cluster of
+              five-star reviews posted within the same week is a marketing artifact, not a signal.
+            </li>
+            <li>
+              <strong>Reddit and Quora threads</strong> on Indian AI courses — the most honest source
+              on dropout, refund friction and what placement support actually delivered.
+            </li>
+            <li>
+              <strong>YouTube reviews</strong> — useful only when the reviewer shows the actual
+              learning platform on screen. Discount-code reviews were ignored.
+            </li>
+          </ul>
+          <H3>The evaluation done from a beginner's seat</H3>
+          <p>
+            Reading a syllabus as an experienced practitioner is misleading, because you silently fill
+            gaps a beginner cannot. So each shortlisted programme was assessed against a deliberately
+            naive question set: could someone who has never opened a terminal follow week one
+            unaided? Is the first Python session about installing Python, or does it assume the
+            environment already works? When embeddings appear, has the word "vector" been defined? Is
+            there a named human to ask when an assignment breaks at 11 p.m.? Programmes that failed
+            those four questions dropped several ranks regardless of how current their GenAI content
+            was.
+          </p>
+        </Section>
+
+        <Section
+          id="choose"
+          eyebrow="Section 5c"
+          title="How to Choose the Right GenAI Course as a Beginner in India"
+          blue
+        >
+          <p>
+            Different starting points need different priorities. The mistake is buying the programme
+            that suits someone else's starting point because it was marketed harder.
+          </p>
+          <DataTable
+            head={["If you are a…", "Prioritise", "Deprioritise", "Realistic first target role"]}
+            firstColWidth="min-w-[190px]"
+            rows={[
+              [
+                "Complete beginner, no coding",
+                "Foundation block length, live doubt-clearing, TA support",
+                "Brand prestige, advanced fine-tuning depth",
+                "GenAI Developer (junior) or AI Product Analyst",
+              ],
+              [
+                "Fresher with a degree, no experience",
+                "Project portfolio, mock interviews, campus-adjacent hiring partners",
+                "Self-paced catalogues with no accountability",
+                "Prompt Engineer or GenAI Developer (junior)",
+              ],
+              [
+                "Working professional, no AI background",
+                "Weekend live cohorts, recordings, catch-up sessions",
+                "20+ hour weekly commitments you cannot honour",
+                "Internal GenAI project ownership, then LLM Engineer",
+              ],
+              [
+                "Career-switcher from a non-tech function",
+                "Written placement terms, counselling, domain-relevant capstone",
+                "Programmes with no interview pipeline",
+                "AI Product Analyst or GenAI Developer",
+              ],
+            ]}
+          />
+          <H3>What to weigh, in order</H3>
+          <ul>
+            <li>
+              <strong>Verified placement data over marketing claims.</strong> A percentage without a
+              denominator, a window and a verification method is a decoration. Ask: of how many
+              enrolled learners, in which months, in which roles, verified by offer letter or
+              self-reported?
+            </li>
+            <li>
+              <strong>Quality of the foundational ramp.</strong> Ask to see the week-by-week plan for
+              the first four weeks. If Python appears only as "pre-work", assume it will not be taught.
+            </li>
+            <li>
+              <strong>Interview preparation specific to GenAI roles.</strong> A generic HR mock is not
+              preparation for being asked why your RAG pipeline chunked at 512 tokens, how you
+              evaluated retrieval quality, or when you would fine-tune instead of prompt.
+            </li>
+            <li>
+              <strong>Real recruiter relationships over job boards.</strong> Ask which companies
+              interviewed learners from the last three batches — a specific answer is a good sign, a
+              logo wall is not.
+            </li>
+            <li>
+              <strong>Curriculum alignment with 2026 hiring.</strong> LLMs, RAG, LangChain or
+              LlamaIndex, vector databases, AI agents, fine-tuning, evaluation, MLOps and deployment.
+              A syllabus missing agents and RAG entirely is describing 2023.
+            </li>
+            <li>
+              <strong>Alumni network strength.</strong> Referrals convert better than applications in
+              the Indian market, which makes a large, active alumni community a genuine asset
+              independent of any placement statistic.
+            </li>
+          </ul>
+        </Section>
+
+        <Section
+          id="beyond-marketing"
+          eyebrow="Section 5d"
+          title={`What to Look For Beyond the Marketing`}
+        >
+          <p>
+            The two phrases that cost Indian learners the most money are used almost
+            interchangeably in advertising and mean entirely different things in a contract.
+          </p>
+          <DataTable
+            head={["Phrase", "What it usually means", "Questions that expose the difference"]}
+            firstColWidth="min-w-[200px]"
+            rows={[
+              [
+                "100% placement assistance",
+                "A support service: resume help, mock interviews, referrals or portal access. No obligation to produce an offer, and “100%” refers to everyone receiving the service.",
+                "Is any outcome promised in writing? What happens if I get no interviews in six months?",
+              ],
+              [
+                "Placement guarantee",
+                "A contractual commitment, valid only inside eligibility conditions — attendance, assessment scores, location flexibility, salary floor, application quotas.",
+                "Show me the eligibility clauses and the refund clause. What percentage of past learners met them?",
+              ],
+              [
+                "Average salary ₹X LPA",
+                "Often the mean of a small self-reported subset, sometimes including experienced hires.",
+                "Median, not mean? Freshers only? Sample size? Verified how?",
+              ],
+              [
+                "Hiring partners",
+                "Any company that has ever hired anyone from the platform, or simply has a job board integration.",
+                "Which of these interviewed learners from the last three batches, for which roles?",
+              ],
+            ]}
+          />
+          <div className="my-6 grid gap-5 md:grid-cols-2">
+            <FlagList
+              tone="warn"
+              title="Red flags in GenAI course marketing"
+              items={[
+                "Placement percentage quoted with no denominator, window or verification method",
+                "Salary figures presented as averages with no sample size",
+                "Reviews clustered within days of each other, all five stars, all generic",
+                "No verifiable alumni holding actual GenAI titles on LinkedIn",
+                "Syllabus with no RAG, no agents and no evaluation — a 2023 curriculum in 2026 packaging",
+                "No published last-updated date anywhere on the course page",
+                "Syllabus available only after a sales call",
+                "Pressure tactics: expiring discounts, “last two seats”, refusal to share terms in writing",
+                "Python listed as “optional” while assignments require it from week two",
+              ]}
+            />
+            <FlagList
+              tone="good"
+              title="How a beginner verifies the real track record"
+              items={[
+                "Search the exact programme name on LinkedIn, filter to the last 12 months, count GenAI-specific titles",
+                "Message three alumni directly and ask what placement support actually did for them",
+                "Ask for the written placement terms before paying, and read the eligibility clauses",
+                "Ask which companies interviewed the last three batches, by name",
+                "Request a trial session or the first week's recording and check the teaching pace yourself",
+                "Check GitHub for learner capstone repositories from that programme",
+                "Confirm the refund window, GST treatment and total EMI cost including interest",
+                "Cross-check the syllabus against three live GenAI job descriptions on Naukri or LinkedIn",
+              ]}
+            />
+          </div>
+          <Callout tone="signal" label="A test that takes ten minutes">
+            <p>
+              Open three current GenAI job postings in your target city, list every named tool and
+              concept in them, then tick off which appear in the syllabus you are considering. If
+              fewer than two-thirds are covered, the course is preparing you for a job market that no
+              longer exists. Do this before the sales call, not after.
+            </p>
+          </Callout>
+        </Section>
+
         {/* SKILLS */}
         <Section
           id="skills"
@@ -1277,6 +1647,16 @@ function Article() {
             the right answer when you are undecided.
           </p>
           <DecisionTree />
+
+          <H3 id="genai-quiz">Beginner GenAI course matcher — eight questions</H3>
+          <p>
+            The quiz below is built for beginners choosing a Generative AI course with placement
+            support. It asks about your experience level, educational background, goal, budget in ₹,
+            placement priority, learning mode, weekly hours and whether you need Python and machine
+            learning taught from scratch — then opens your best-fit match in a result card with the
+            modules covered, the placement reality and a link.
+          </p>
+          <GenAiQuiz />
         </Section>
 
         {/* CHECKLIST */}
