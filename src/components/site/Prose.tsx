@@ -99,7 +99,7 @@ export function DataTable({
   head: string[];
   rows: ReactNode[][];
   firstColWidth?: string;
-  caption?: string;
+  caption?: ReactNode;
 }) {
   return (
     <figure className="my-7 lg:-mx-24 xl:-mx-40">
