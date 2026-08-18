@@ -819,7 +819,7 @@ function Article() {
                 ["RAG — what it is, when to use it, how to specify it", "Deep", "Basic", "Moderate", "Moderate", "Moderate", "Moderate", "Basic", "Basic", "Good", "Moderate"],
                 ["AI agents & agentic workflow specification", "Deep", "Limited", "Moderate", "Moderate", "Basic", "Basic", "Limited", "Limited", "Moderate", "Varies"],
                 ["Data fluency for BAs — SQL, data quality, lineage", "Deep", "Basic", "Moderate", "Limited", "Good", "Good", "Good", "Good", "Good", "Moderate"],
-                ["AI governance & regulatory landscape (DPDP, EU AI Act, ISO 42001, NIST AI RMF)", "Deep", "Good", "Moderate", "Basic", "Moderate", "Basic", "Basic", "Basic", "Limited", "Limited"],
+                [<>AI governance &amp; regulatory landscape (DPDP, EU AI Act, ISO 42001, NIST AI RMF)<Cite ids={["dpdp-act", "eu-ai-act", "iso-42001", "nist-rmf"]} /></>, "Deep", "Good", "Moderate", "Basic", "Moderate", "Basic", "Basic", "Basic", "Limited", "Limited"],
                 ["Vendor evaluation & build-vs-buy analysis for AI", "Deep", "Moderate", "Basic", "Basic", "Basic", "Basic", "Basic", "Basic", "Limited", "Limited"],
               ] as string[][]
             )
@@ -1703,7 +1703,7 @@ function Article() {
               tone="warn"
               title="Red flags — any two should stop you"
               items={[
-                '"Guaranteed job" or "guaranteed salary hike" language',
+                '"Guaranteed job" or "guaranteed salary hike" language — advertising guidance for education providers treats these as unsubstantiable [24]',
                 "No published syllabus before payment",
                 "40%+ of modules on model building for a BA audience",
                 "No last-updated date anywhere on the page",

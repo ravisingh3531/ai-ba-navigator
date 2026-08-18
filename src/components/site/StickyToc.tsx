@@ -33,6 +33,7 @@ const items: Item[] = [
   { id: "checklist", label: "Buyer's checklist" },
   { id: "faq", label: "FAQs" },
   { id: "seo", label: "Resources & metadata" },
+  { id: "sources", label: "Sources & citations" },
 ];
 
 function useActiveSection(ids: string[]) {
