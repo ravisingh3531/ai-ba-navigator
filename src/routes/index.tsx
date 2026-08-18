@@ -17,7 +17,7 @@ import { SeoBlock, InternalLinks } from "@/components/site/SeoBlock";
 const TITLE =
   "Top 10 Best AI Courses for Business Analysts in India (2026) | Honest Reviews";
 const DESCRIPTION =
-  "We scored 130+ programs on BA-role relevance, coding load, artifacts, ₹ pricing and EMI. Honest reviews of the AI courses that upgrade an Indian BA — and the ones that don't.";
+  "I read 130+ programs and scored them on BA-role relevance, coding load, artifacts, ₹ pricing and EMI. Honest reviews of the AI courses that upgrade an Indian BA — and the ones that don't.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -295,7 +295,7 @@ function Article() {
           />
 
           <div className="prose-editorial">
-            <p>We then shortlisted the ten courses that:</p>
+            <p>From there I shortlisted the ten courses that:</p>
             <ul>
               <li>Treat the Business Analyst as a Business Analyst, not as a trainee data scientist</li>
               <li>
@@ -430,7 +430,7 @@ function Article() {
             of evenings and weekends, which for a working professional is the scarcest resource they
             have. It costs <strong>career momentum</strong>: you re-enter the market a year later
             against candidates who spent that year shipping GenAI projects. And it costs something
-            harder to price — <strong>confidence</strong>. In our conversations with learners who had
+            harder to price — <strong>confidence</strong>. In my own conversations with learners who had
             abandoned an AI course, the most common self-diagnosis was "I'm not technical enough",
             when the honest diagnosis was that the course skipped the foundation block they needed.
           </p>
@@ -486,9 +486,9 @@ function Article() {
           <Callout tone="warn" label="Disclosure and evidence standard">
             <p>
               LogicMojo publishes this comparison, so the evidence standard here has to be higher, not
-              lower. We do not restate provider-reported placement percentages as facts, we do not
+              lower. I do not restate provider-reported placement percentages as facts, I do not
               invent salary figures, company names or student quotes, and the honest limitations of
-              our own course are listed in Section 3 in the same detail as every competitor's. Where a
+              my own employer's course are listed in Section 3 in the same detail as every competitor's. Where a
               commercial detail is not yet published it appears as a placeholder — <code>₹XX,XXX</code>
               , <code>X weeks</code>, <code>[Batch Dates]</code>, <code>[EMI Partner]</code> — rather
               than as a guess.
@@ -516,7 +516,7 @@ function Article() {
           blue
         >
           <p>
-            Almost every provider in India now markets an AI-for-BA offering. In our review of 130+
+            Almost every provider in India now markets an AI-for-BA offering. Across the 130+
             programs, they resolved into five categories — and only the fifth is built for the
             reader of this article.
           </p>
@@ -531,7 +531,7 @@ function Article() {
           <H4>Category 2 — The repackaged business analytics course</H4>
           <p>
             The most common and most confusing case in India, because analytics is a legitimate,
-            older discipline our EdTech sector has sold at scale for a decade. Excel, SQL, Power BI
+            older discipline the Indian EdTech sector has sold at scale for a decade. Excel, SQL, Power BI
             or Tableau, descriptive statistics and dashboarding, with an AI module bolted on. The
             data fluency is genuinely useful to a BA. The AI specification capability is not there.
           </p>
@@ -602,7 +602,7 @@ function Article() {
             what a number actually means. Analytics training genuinely helps a BA read a model
             evaluation report. But if your goal is to lead AI-enabled work, an analytics program
             will leave the specification, evaluation and governance layers untouched — and
-            conflating the two is, in our assessment, the single biggest reason Indian BAs buy the
+            conflating the two is, in my assessment after watching it happen repeatedly, the single biggest reason Indian BAs buy the
             wrong course.
           </p>
           <Callout tone="accent" label="Vocabulary, in one sentence each">
@@ -650,7 +650,7 @@ function Article() {
         </Section>
 
         {/* SECTION 3 */}
-        <Section id="top-10" eyebrow="Section 2" title="Our Top 10 Picks: Best AI Courses for Business Analysts in 2026">
+        <Section id="top-10" eyebrow="Section 2" title="My Top 10 Picks: Best AI Courses for Business Analysts in 2026">
           <p>
             These ten were selected using the six weighted criteria above, with BA-role relevance
             carrying the heaviest weight. The ranking answers one question — which course best
@@ -1046,7 +1046,7 @@ function Article() {
         <Section id="reviews" eyebrow="Section 4" title="The Full Reviews, Rank by Rank">
           <p>
             Each review states the actual coding load, the artifacts produced, honest limitations,
-            and at least one reader for whom a competitor beats our own course.
+            and at least one reader for whom a competitor beats my own employer's course.
           </p>
         </Section>
       </main>
@@ -1064,7 +1064,7 @@ function Article() {
               scoring dimension and weight is published above so you can re-weight them for your own
               situation; if you set BA-role relevance to 10% and credential value to 40%, the
               ranking changes and we would not argue with you. Limitations for LogicMojo are stated
-              in the same detail as for every competitor, and commercial details for our own course
+              in the same detail as for every competitor, and commercial details for my own course
               appear as placeholders until published.
             </p>
           </Callout>
@@ -1755,7 +1755,7 @@ function Article() {
           <Callout tone="warn" label="Publisher disclosure — stated a third and final time">
             <p>
               This comparison is published by LogicMojo, which offers the course ranked first. The
-              six weighted criteria, the scoring evidence and a full limitations list for our own
+              six weighted criteria, the scoring evidence and a full limitations list for my own
               course are published above so you can re-weight them and reach a different conclusion.
               Prices are indicative and in ₹, GST applies as per prevailing rules, regulatory content
               is general information rather than legal advice, and nothing here is a guarantee of
