@@ -195,6 +195,23 @@
     linear-gradient(to bottom, oklch(0.96 0.025 255 / 0.95), oklch(0.985 0.006 255 / 0.85) 70%);
 }
 
+/* Deep navy gradient with faint blueprint grid — used for hero, feature bands and footer */
+@utility bg-navy-grid {
+  background-color: oklch(0.26 0.09 265);
+  background-image:
+    linear-gradient(to right, oklch(1 0 0 / 0.055) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(1 0 0 / 0.055) 1px, transparent 1px),
+    radial-gradient(circle at 8% 0%, oklch(0.38 0.13 250 / 0.75), transparent 55%),
+    radial-gradient(circle at 92% 100%, oklch(0.3 0.12 292 / 0.7), transparent 55%),
+    linear-gradient(140deg, oklch(0.27 0.1 258), oklch(0.24 0.09 275));
+  background-size:
+    128px 128px,
+    128px 128px,
+    auto,
+    auto,
+    auto;
+}
+
 @utility bg-blue-section {
   background-image:
     radial-gradient(circle at 0% 0%, oklch(0.48 0.21 258 / 0.08), transparent 40%),

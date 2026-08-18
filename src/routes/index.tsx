@@ -57,7 +57,7 @@ const toc = [
 function Article() {
   return (
     <div className="min-h-screen bg-background">
-      <header className="relative overflow-hidden border-b border-border bg-grain">
+      <header className="dark relative overflow-hidden border-b border-border bg-navy-grid text-white">
         <div
           aria-hidden
           className="pointer-events-none absolute -right-20 -top-28 size-[32rem] rounded-full bg-primary/15 blur-3xl"
@@ -94,7 +94,7 @@ function Article() {
             versus the ones that quietly try to turn you into a junior data scientist.
           </p>
 
-          <div className="surface-card animate-rise mt-8 border-primary/25 bg-gradient-to-br from-card to-primary/[0.04] p-6 shadow-lift">
+          <div className="surface-card animate-rise mt-8 border-white/15 bg-white/[0.07] p-6 shadow-lift backdrop-blur-sm">
             <p className="eyebrow inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-primary shadow-sm">
               The answer in ten seconds
             </p>
