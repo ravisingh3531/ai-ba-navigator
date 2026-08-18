@@ -82,8 +82,9 @@ export function DataTable({
   caption?: string;
 }) {
   return (
-    <figure className="my-7">
+    <figure className="my-7 lg:-mx-24 xl:-mx-40">
       <div className="overflow-x-auto rounded-xl border border-border bg-card shadow-card">
+
         <table className="w-full border-collapse text-left text-sm">
           <thead>
             <tr className="bg-secondary/80">
