@@ -58,13 +58,18 @@ export function Callout({
   children: ReactNode;
 }) {
   const tones: Record<string, string> = {
-    signal: "border-l-signal bg-signal/5",
-    warn: "border-l-warn bg-warn/8",
-    good: "border-l-good bg-good/8",
-    accent: "border-l-accent bg-accent/10",
+    signal: "border-l-signal bg-signal/6 ring-signal/12",
+    warn: "border-l-warn bg-warn/8 ring-warn/12",
+    good: "border-l-good bg-good/8 ring-good/12",
+    accent: "border-l-accent bg-accent/8 ring-accent/12",
   };
   return (
-    <div className={cn("my-6 rounded-r-lg border-l-4 px-5 py-4 text-sm", tones[tone])}>
+    <div
+      className={cn(
+        "my-7 rounded-xl border-l-4 px-5 py-4 text-sm shadow-card ring-1 backdrop-blur-sm transition-shadow duration-300 hover:shadow-lift",
+        tones[tone],
+      )}
+    >
       {label ? <p className="eyebrow mb-2 text-foreground/70">{label}</p> : null}
       <div className="prose-editorial [&_p:first-child]:mt-0 [&_p:last-child]:mb-0">{children}</div>
     </div>
@@ -73,7 +78,7 @@ export function Callout({
 
 export function Caption({ children }: { children: ReactNode }) {
   return (
-    <p className="mt-3 border-l-2 border-accent pl-4 text-sm italic text-muted-foreground">
+    <p className="mt-3 border-l-2 border-primary/50 pl-4 text-sm italic text-muted-foreground">
       {children}
     </p>
   );
@@ -92,17 +97,17 @@ export function DataTable({
 }) {
   return (
     <figure className="my-7 lg:-mx-24 xl:-mx-40">
-      <div className="overflow-x-auto rounded-xl border border-border bg-card shadow-card">
+      <div className="surface-card overflow-x-auto">
 
         <table className="w-full border-collapse text-left text-sm">
           <thead>
-            <tr className="bg-secondary/80">
+            <tr className="bg-primary/8">
               {head.map((h, i) => (
                 <th
                   key={h + i}
                   scope="col"
                   className={cn(
-                    "whitespace-nowrap border-b border-border px-4 py-3 align-bottom font-semibold text-secondary-foreground",
+                    "whitespace-nowrap border-b border-primary/20 px-4 py-3.5 align-bottom text-xs font-semibold uppercase tracking-wider text-primary",
                     i === 0 && firstColWidth,
                   )}
                 >
@@ -113,7 +118,13 @@ export function DataTable({
           </thead>
           <tbody>
             {rows.map((row, ri) => (
-              <tr key={ri} className={cn(ri % 2 === 1 && "bg-muted/40")}>
+              <tr
+                key={ri}
+                className={cn(
+                  "transition-colors duration-200 hover:bg-primary/5",
+                  ri % 2 === 1 && "bg-muted/50",
+                )}
+              >
                 {row.map((cell, ci) => (
                   <td
                     key={ci}
@@ -174,8 +185,8 @@ export function FlagList({
   return (
     <div
       className={cn(
-        "rounded-xl border p-5",
-        tone === "good" ? "border-good/30 bg-good/6" : "border-destructive/30 bg-destructive/6",
+        "surface-card p-6",
+        tone === "good" ? "border-good/30 bg-good/5" : "border-destructive/30 bg-destructive/5",
       )}
     >
       <h4 className="text-base font-semibold">{title}</h4>
