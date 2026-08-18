@@ -273,7 +273,7 @@ export function LogicMojoSpotlight() {
         Tap any module to expand it. The sequence is deliberately built backwards from BA
         deliverables rather than forwards from AI theory.
       </p>
-      <ol className="not-prose my-6 grid gap-3">
+      <ol className="not-prose my-6 grid list-none gap-3 pl-0">
         {modules.map((m) => (
           <ModuleCard key={m.n} m={m} />
         ))}

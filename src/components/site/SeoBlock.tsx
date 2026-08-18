@@ -103,7 +103,7 @@ export function SeoBlock() {
         <p className="flex items-center gap-2 font-semibold">
           <Tags className="size-4 text-primary" aria-hidden /> Keywords and intended placement
         </p>
-        <ul className="mt-4 grid gap-2.5">
+        <ul className="mt-4 grid list-none gap-2.5 pl-0">
           {keywords.map((k) => (
             <li key={k.term} className="rounded-lg border border-border/70 bg-muted/40 p-3">
               <p className="flex flex-wrap items-center gap-2 text-sm font-medium">
@@ -123,7 +123,7 @@ export function SeoBlock() {
           <p className="flex items-center gap-2 font-semibold">
             <Code2 className="size-4 text-primary" aria-hidden /> Recommended schema
           </p>
-          <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+          <ul className="mt-3 list-none space-y-2 pl-0 text-sm text-muted-foreground">
             {[
               "Article — author, reviewer and dateModified",
               "FAQPage — the 22 questions in this article (implemented)",
@@ -142,7 +142,7 @@ export function SeoBlock() {
           <p className="flex items-center gap-2 font-semibold">
             <Link2 className="size-4 text-primary" aria-hidden /> Internal anchor text variants
           </p>
-          <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+          <ul className="mt-3 list-none space-y-2 pl-0 text-sm text-muted-foreground">
             {anchors.map((a) => (
               <li key={a} className="flex gap-2">
                 <span aria-hidden className="mt-1.5 size-1.5 shrink-0 rounded-full bg-accent/60" />
@@ -157,7 +157,7 @@ export function SeoBlock() {
         <p className="flex items-center gap-2 font-semibold">
           <ImageIcon className="size-4 text-primary" aria-hidden /> Image alt-text suggestions
         </p>
-        <ol className="mt-3 grid gap-2 text-sm text-muted-foreground sm:grid-cols-2">
+        <ol className="mt-3 grid list-none gap-2 pl-0 text-sm text-muted-foreground sm:grid-cols-2">
           {alts.map((a, i) => (
             <li key={a} className="flex gap-2">
               <span className="font-mono text-xs text-primary">{String(i + 1).padStart(2, "0")}</span>
