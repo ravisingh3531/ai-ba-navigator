@@ -106,7 +106,7 @@ export function ExpertCarousel() {
             aria-label={`Show reviewer ${i + 1}`}
             className={
               "h-1.5 flex-1 rounded-full transition-colors " +
-              (i === index ? "bg-accent" : "bg-border hover:bg-muted-foreground/40")
+              (i === index ? "bg-gradient-to-r from-primary to-accent shadow-sm" : "bg-border hover:bg-primary/40")
             }
           />
         ))}
