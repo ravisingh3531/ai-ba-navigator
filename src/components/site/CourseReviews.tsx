@@ -347,11 +347,11 @@ export function CourseReviews() {
           </div>
 
           <div className="mt-5 grid gap-3 text-sm sm:grid-cols-2">
-            <p className="rounded-lg border border-border px-4 py-3">
-              <span className="font-semibold">Choose it if: </span>
+            <p className="rounded-lg border border-primary/15 bg-primary/[0.04] px-4 py-3">
+              <span className="font-semibold text-primary">Choose it if: </span>
               {r.suits}
             </p>
-            <p className="rounded-lg border border-border px-4 py-3">
+            <p className="rounded-lg border border-border bg-muted/40 px-4 py-3">
               <span className="font-semibold">Skip it if: </span>
               {r.skipIf}
             </p>
