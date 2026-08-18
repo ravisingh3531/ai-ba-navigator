@@ -6,6 +6,7 @@ import { ExpertCarousel } from "@/components/site/ExpertCarousel";
 import { DecisionTree } from "@/components/site/DecisionTree";
 import { Faq, faqs } from "@/components/site/Faq";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { StickyToc } from "@/components/site/StickyToc";
 
 const TITLE =
   "Top 10 Best AI Courses for Business Analysts in India (2026) | Honest Reviews";
@@ -57,7 +58,10 @@ const toc = [
 function Article() {
   return (
     <div className="min-h-screen bg-background">
-      <header className="dark relative overflow-hidden border-b border-border bg-navy-grid text-white">
+      <header
+        id="top"
+        className="dark relative overflow-hidden border-b border-border bg-navy-grid text-white"
+      >
         <div
           aria-hidden
           className="pointer-events-none absolute -right-20 -top-28 size-[32rem] rounded-full bg-primary/15 blur-3xl"
@@ -144,9 +148,11 @@ function Article() {
         </div>
       </header>
 
+      <StickyToc />
+
       <main className="mx-auto max-w-3xl px-5">
         {/* INTRODUCTION */}
-        <section className="py-14">
+        <section id="deep-dive" className="scroll-mt-24 py-14">
           <Lead>
             Business analysis in India is not being replaced by AI. It is being re-scoped by it — and
             that is a bigger change than replacement, because it happens quietly, project by project,
