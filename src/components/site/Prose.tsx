@@ -103,17 +103,17 @@ export function DataTable({
 }) {
   return (
     <figure className="my-7 lg:-mx-24 xl:-mx-40">
-      <div className="surface-card overflow-x-auto">
+      <div className="surface-card overflow-x-auto border-primary/15">
 
         <table className="w-full border-collapse text-left text-sm">
           <thead>
-            <tr className="bg-primary/8">
+            <tr className="bg-gradient-to-r from-primary/[0.11] to-accent/[0.08]">
               {head.map((h, i) => (
                 <th
                   key={h + i}
                   scope="col"
                   className={cn(
-                    "whitespace-nowrap border-b border-primary/20 px-4 py-3.5 align-bottom text-xs font-semibold uppercase tracking-wider text-primary",
+                    "whitespace-nowrap border-b border-primary/25 px-4 py-3.5 align-bottom text-xs font-semibold uppercase tracking-wider text-primary",
                     i === 0 && firstColWidth,
                   )}
                 >
