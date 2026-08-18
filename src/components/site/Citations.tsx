@@ -7,7 +7,7 @@ import { sourceById, sources, verifyByRank } from "./sources";
  * source title on hover/focus so readers can verify a claim without losing place.
  */
 export function Cite({ ids }: { ids: string[] }) {
-  const resolved = ids.map((id) => sourceById[id]).filter(Boolean);
+  const resolved = ids.flatMap((id) => (sourceById[id] ? [sourceById[id]!] : []));
   if (!resolved.length) return null;
   return (
     <sup className="ml-0.5 inline-flex gap-0.5 align-super text-[0.65em] font-semibold">
