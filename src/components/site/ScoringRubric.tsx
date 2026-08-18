@@ -44,7 +44,7 @@ export const criteria: Criterion[] = [
     name: "AI Depth and 2026 Currency",
     weight: 20,
     why:
-      "The 2026 enterprise queue in India is GenAI, RAG and agent pilots, not 2019 supervised-learning demos.<sup /> A syllabus that stops at scikit-learn teaches a real skill for a role most BAs will never be hired into, so currency is weighted second.",
+      "The 2026 enterprise queue in India is GenAI, RAG and agent pilots, not 2019 supervised-learning demos. A syllabus that stops at scikit-learn teaches a real skill for a role most BAs will never be hired into, so currency is weighted second.",
     evidence: [
       "Presence and depth of LLM, prompt design, RAG, vector store, agent, evaluation, guardrail and fine-tuning modules, scored on the same seven-topic grid used in every review.",
       "Last-updated dates on syllabus PDFs and course pages, plus version references (model names, framework versions) as an authenticity check.",
