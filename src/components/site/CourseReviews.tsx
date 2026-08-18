@@ -282,7 +282,7 @@ const reviews: Review[] = [
 export const reviewIndex = reviews.map((r) => ({
   rank: r.rank,
   id: `rank-${r.rank}`,
-  short: r.name.split(" — ")[0].replace(/\s*\(.*\)\s*$/, ""),
+  short: (r.name.split(" — ")[0] ?? r.name).replace(/\s*\(.*\)\s*$/, ""),
 }));
 
 
