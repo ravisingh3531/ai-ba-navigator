@@ -884,7 +884,7 @@ function Article() {
 
       <main className="mx-auto max-w-3xl px-5">
         {/* METHODOLOGY */}
-        <Section id="methodology" eyebrow="Section 4" title="Methodology, Evidence and Commercial Disclosure">
+        <Section id="methodology" eyebrow="Section 4" title="Methodology, Evidence and Commercial Disclosure" blue>
           <Callout tone="warn" label="Disclosure — stated twice, deliberately">
             <p>
               LogicMojo publishes this comparison and offers a competing course, ranked first. Every
