@@ -7,25 +7,31 @@ export function Section({
   title,
   children,
   className,
+  blue = false,
 }: {
   id: string;
   eyebrow?: string;
   title: string;
   children: ReactNode;
   className?: string;
+  blue?: boolean;
 }) {
   return (
     <section
       id={id}
-      className={cn("hairline-top animate-rise scroll-mt-28 py-16 sm:py-20", className)}
+      className={cn(
+        "animate-rise scroll-mt-28 py-16 sm:py-20",
+        blue ? "bg-blue-section -mx-5 px-5 sm:-mx-8 sm:px-8 lg:-mx-16 lg:px-16 xl:-mx-24 xl:px-24" : "hairline-top",
+        className,
+      )}
     >
       {eyebrow ? (
-        <p className="eyebrow mb-3 inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/8 px-3 py-1 text-primary">
+        <p className="eyebrow mb-3 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-primary shadow-sm">
           {eyebrow}
         </p>
       ) : null}
       <h2 className="text-balance text-3xl font-semibold leading-tight sm:text-4xl">{title}</h2>
-      <div className="mt-4 h-px w-24 bg-gradient-to-r from-primary to-transparent" />
+      <div className="mt-4 h-1 w-28 rounded-full bg-gradient-to-r from-primary via-accent to-transparent" />
       <div className="prose-editorial mt-6 max-w-none">{children}</div>
     </section>
   );
