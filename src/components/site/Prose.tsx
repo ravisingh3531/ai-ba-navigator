@@ -84,7 +84,7 @@ export function Callout({
 
 export function Caption({ children }: { children: ReactNode }) {
   return (
-    <p className="mt-3 border-l-2 border-primary/50 pl-4 text-sm italic text-muted-foreground">
+    <p className="mt-3 border-l-2 border-primary/60 bg-primary/[0.03] pl-4 py-1 text-sm italic text-muted-foreground">
       {children}
     </p>
   );
