@@ -9,6 +9,10 @@ const items: Item[] = [
   { id: "deep-dive", label: "The deep dive" },
   { id: "reality-check", label: "Reality check" },
   { id: "top-10", label: "Top 10 picks" },
+  { id: "logicmojo", label: "Why LogicMojo is #1" },
+  { id: "logicmojo-curriculum", label: "Curriculum, module by module", child: true },
+  { id: "logicmojo-artifacts", label: "Artifacts you leave with", child: true },
+  { id: "logicmojo-limits", label: "Honest limitations", child: true },
   { id: "reviews", label: "The full reviews" },
   ...reviewIndex.map((r) => ({
     id: r.id,
@@ -16,13 +20,14 @@ const items: Item[] = [
     child: true,
   })),
   { id: "methodology", label: "Methodology" },
-  { id: "reviewers", label: "Who reviewed this" },
+  { id: "reviewers", label: "Author & reviewers" },
   { id: "skills", label: "Skills a BA needs" },
   { id: "careers", label: "Career paths" },
   { id: "roadmap", label: "90-day roadmap" },
   { id: "decision-tree", label: "Quiz: find your course" },
   { id: "checklist", label: "Buyer's checklist" },
   { id: "faq", label: "FAQs" },
+  { id: "seo", label: "Resources & metadata" },
 ];
 
 function useActiveSection(ids: string[]) {

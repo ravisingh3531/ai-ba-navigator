@@ -973,7 +973,7 @@ function Article() {
         {/* SKILLS */}
         <Section
           id="skills"
-          eyebrow="Section 6"
+          eyebrow="Section 7"
           title="The AI Skills a Business Analyst Actually Needs (And the Ones You Can Safely Ignore)"
           blue
         >
@@ -1087,7 +1087,7 @@ function Article() {
         {/* CAREERS */}
         <Section
           id="careers"
-          eyebrow="Section 7"
+          eyebrow="Section 8"
           title="Where AI Skills Actually Take a Business Analyst in India — Roles, Employers and Market Reality"
           blue
         >
@@ -1213,7 +1213,7 @@ function Article() {
         </Section>
 
         {/* ROADMAP */}
-        <Section id="roadmap" eyebrow="Section 8" title="From Course to Credibility: A 90-Day Application Plan" blue>
+        <Section id="roadmap" eyebrow="Section 9" title="From Course to Credibility: A 90-Day Application Plan" blue>
           <div className="my-6 grid gap-5 md:grid-cols-3">
             {[
               {
@@ -1270,7 +1270,7 @@ function Article() {
         </Section>
 
         {/* DECISION TREE */}
-        <Section id="decision-tree" eyebrow="Section 9" title="Find Your Course in 60 Seconds">
+        <Section id="decision-tree" eyebrow="Section 10" title="Find Your Course in 60 Seconds">
           <p>
             Five questions, one recommendation, one alternative and the reason behind it. If you are
             unsure about anything, answer "I'm not sure yet" — it routes to a free option, which is
@@ -1282,7 +1282,7 @@ function Article() {
         {/* CHECKLIST */}
         <Section
           id="checklist"
-          eyebrow="Section 10"
+          eyebrow="Section 11"
           title="How to Audit Any AI Course for Business Analysts Before You Pay"
           blue
         >
@@ -1331,7 +1331,7 @@ function Article() {
         </Section>
 
         {/* FAQ */}
-        <Section id="faq" eyebrow="Section 11" title="AI Courses for Business Analysts in India — FAQs" blue>
+        <Section id="faq" eyebrow="Section 12" title="AI Courses for Business Analysts in India — FAQs" blue>
           <Faq />
           <Callout tone="signal" label="Standing note">
             <p>
@@ -1341,6 +1341,37 @@ function Article() {
               compensation figures are market ranges, not guarantees.
             </p>
           </Callout>
+        </Section>
+        {/* SEO + RESOURCES */}
+        <Section
+          id="seo"
+          eyebrow="Section 13"
+          title="Related Resources, Editorial Metadata and Publisher Disclosure"
+        >
+          <p>
+            If this article answered the ranking question, the next questions are usually about
+            syllabus depth, fees and timelines. These pages go deeper than a comparison can, and the
+            metadata block below is published openly so the editorial choices behind this article are
+            inspectable rather than implied.
+          </p>
+          <H3>Where to read next</H3>
+          <InternalLinks />
+          <H3>Editorial and SEO metadata</H3>
+          <SeoBlock />
+          <Callout tone="warn" label="Publisher disclosure — stated a third and final time">
+            <p>
+              This comparison is published by LogicMojo, which offers the course ranked first. The
+              six weighted criteria, the scoring evidence and a full limitations list for our own
+              course are published above so you can re-weight them and reach a different conclusion.
+              Prices are indicative and in ₹, GST applies as per prevailing rules, regulatory content
+              is general information rather than legal advice, and nothing here is a guarantee of
+              employment, promotion or compensation.
+            </p>
+          </Callout>
+          <p className="text-sm text-muted-foreground">
+            <strong>Last updated:</strong> [Month Year] · Reviewed quarterly · Next scheduled review
+            [Month Year].
+          </p>
         </Section>
       </main>
 
