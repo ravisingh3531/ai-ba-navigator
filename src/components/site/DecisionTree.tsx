@@ -139,7 +139,7 @@ export function DecisionTree() {
   const outcome = done ? resolve(answers as Required<Answers>) : null;
 
   return (
-    <div className="my-8 rounded-2xl border border-border bg-card p-6 shadow-card">
+    <div className="surface-card my-8 p-6 sm:p-8">
       <div className="flex items-center justify-between gap-4">
         <p className="eyebrow">
           {done ? "Your result" : `Question ${step + 1} of ${questions.length}`}
@@ -153,7 +153,7 @@ export function DecisionTree() {
 
       <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-muted">
         <div
-          className="h-full rounded-full bg-accent transition-all"
+          className="h-full rounded-full bg-gradient-to-r from-primary to-accent transition-all duration-500"
           style={{
             width: `${((done ? questions.length : step) / questions.length) * 100}%`,
           }}
@@ -170,7 +170,7 @@ export function DecisionTree() {
                 onClick={() =>
                   setAnswers((prev) => ({ ...prev, [questions[step]!.key]: opt.value }))
                 }
-                className="rounded-lg border border-border bg-background px-4 py-3 text-left text-sm transition-colors hover:border-accent hover:bg-accent/10"
+                className="rounded-xl border border-border bg-background px-4 py-3 text-left text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/50 hover:bg-primary/6 hover:text-primary hover:shadow-card"
               >
                 {opt.label}
               </button>
@@ -179,7 +179,7 @@ export function DecisionTree() {
         </div>
       ) : (
         <div className="mt-6 space-y-4 text-sm">
-          <div className="rounded-lg border border-good/30 bg-good/8 p-4">
+          <div className="animate-rise rounded-xl border border-good/30 bg-good/8 p-5 shadow-card">
             <p className="eyebrow mb-1">Primary recommendation</p>
             <p className="text-base font-semibold">{outcome!.primary}</p>
           </div>
