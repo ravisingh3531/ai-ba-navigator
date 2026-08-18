@@ -7,25 +7,31 @@ export function Section({
   title,
   children,
   className,
+  blue = false,
 }: {
   id: string;
   eyebrow?: string;
   title: string;
   children: ReactNode;
   className?: string;
+  blue?: boolean;
 }) {
   return (
     <section
       id={id}
-      className={cn("hairline-top animate-rise scroll-mt-28 py-16 sm:py-20", className)}
+      className={cn(
+        "animate-rise scroll-mt-28 py-16 sm:py-20",
+        blue ? "bg-blue-section -mx-5 px-5 sm:-mx-8 sm:px-8 lg:-mx-16 lg:px-16 xl:-mx-24 xl:px-24" : "hairline-top",
+        className,
+      )}
     >
       {eyebrow ? (
-        <p className="eyebrow mb-3 inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/8 px-3 py-1 text-primary">
+        <p className="eyebrow mb-3 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-primary shadow-sm">
           {eyebrow}
         </p>
       ) : null}
       <h2 className="text-balance text-3xl font-semibold leading-tight sm:text-4xl">{title}</h2>
-      <div className="mt-4 h-px w-24 bg-gradient-to-r from-primary to-transparent" />
+      <div className="mt-4 h-1 w-28 rounded-full bg-gradient-to-r from-primary via-accent to-transparent" />
       <div className="prose-editorial mt-6 max-w-none">{children}</div>
     </section>
   );
@@ -78,7 +84,7 @@ export function Callout({
 
 export function Caption({ children }: { children: ReactNode }) {
   return (
-    <p className="mt-3 border-l-2 border-primary/50 pl-4 text-sm italic text-muted-foreground">
+    <p className="mt-3 border-l-2 border-primary/60 bg-primary/[0.03] pl-4 py-1 text-sm italic text-muted-foreground">
       {children}
     </p>
   );
@@ -97,17 +103,17 @@ export function DataTable({
 }) {
   return (
     <figure className="my-7 lg:-mx-24 xl:-mx-40">
-      <div className="surface-card overflow-x-auto">
+      <div className="surface-card overflow-x-auto border-primary/15">
 
         <table className="w-full border-collapse text-left text-sm">
           <thead>
-            <tr className="bg-primary/8">
+            <tr className="bg-gradient-to-r from-primary/[0.11] to-accent/[0.08]">
               {head.map((h, i) => (
                 <th
                   key={h + i}
                   scope="col"
                   className={cn(
-                    "whitespace-nowrap border-b border-primary/20 px-4 py-3.5 align-bottom text-xs font-semibold uppercase tracking-wider text-primary",
+                    "whitespace-nowrap border-b border-primary/25 px-4 py-3.5 align-bottom text-xs font-semibold uppercase tracking-wider text-primary",
                     i === 0 && firstColWidth,
                   )}
                 >

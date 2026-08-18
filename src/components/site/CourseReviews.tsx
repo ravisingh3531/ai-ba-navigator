@@ -285,22 +285,22 @@ export function CourseReviews() {
         <article
           key={r.rank}
           id={`rank-${r.rank}`}
-          className="surface-card animate-rise scroll-mt-28 p-6 sm:p-8"
+          className="surface-card animate-rise scroll-mt-28 border-primary/20 bg-gradient-to-br from-card to-primary/[0.04] p-6 sm:p-8"
         >
           <div className="flex flex-wrap items-start gap-4">
-            <div className="flex size-14 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-accent font-display text-2xl font-semibold text-primary-foreground shadow-card">
+            <div className="flex size-14 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-accent font-display text-2xl font-semibold text-primary-foreground shadow-card ring-1 ring-primary/30">
               {r.rank}
             </div>
             <div className="min-w-0 flex-1">
               <h3 className="text-xl font-semibold leading-snug sm:text-2xl">{r.name}</h3>
               <p className="mt-1 text-sm text-muted-foreground">{r.provider}</p>
-              <Badge variant="outline" className="mt-3 border-primary/30 bg-primary/8 text-xs text-primary">
+              <Badge variant="outline" className="mt-3 border-primary/30 bg-primary/10 text-xs text-primary shadow-sm">
                 Best for: {r.bestFor}
               </Badge>
             </div>
           </div>
 
-          <dl className="mt-6 grid gap-4 rounded-xl border border-primary/15 bg-primary/5 p-5 text-sm sm:grid-cols-2">
+          <dl className="mt-6 grid gap-4 rounded-xl border border-primary/20 bg-gradient-to-r from-primary/[0.08] to-accent/[0.05] p-5 text-sm sm:grid-cols-2">
             {[
               ["Indicative price", r.price],
               ["Duration", r.duration],
@@ -347,11 +347,11 @@ export function CourseReviews() {
           </div>
 
           <div className="mt-5 grid gap-3 text-sm sm:grid-cols-2">
-            <p className="rounded-lg border border-border px-4 py-3">
-              <span className="font-semibold">Choose it if: </span>
+            <p className="rounded-lg border border-primary/15 bg-primary/[0.04] px-4 py-3">
+              <span className="font-semibold text-primary">Choose it if: </span>
               {r.suits}
             </p>
-            <p className="rounded-lg border border-border px-4 py-3">
+            <p className="rounded-lg border border-border bg-muted/40 px-4 py-3">
               <span className="font-semibold">Skip it if: </span>
               {r.skipIf}
             </p>

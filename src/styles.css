@@ -76,30 +76,30 @@
 :root {
   --radius: 0.75rem;
 
-  /* Premium white & blue palette */
-  --paper: oklch(0.995 0.003 250);
-  --background: oklch(0.995 0.003 250);
-  --foreground: oklch(0.24 0.045 258);
-  --ink: oklch(0.24 0.045 258);
+  /* Premium white & blue palette — backgrounds carry a soft blue tint so the page is not stark white */
+  --paper: oklch(0.985 0.006 255);
+  --background: oklch(0.985 0.006 255);
+  --foreground: oklch(0.22 0.05 258);
+  --ink: oklch(0.22 0.05 258);
 
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.24 0.045 258);
+  --card-foreground: oklch(0.22 0.05 258);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.24 0.045 258);
+  --popover-foreground: oklch(0.22 0.05 258);
 
-  --primary: oklch(0.52 0.19 258);
+  --primary: oklch(0.48 0.21 258);
   --primary-foreground: oklch(0.99 0.005 250);
 
-  --secondary: oklch(0.955 0.018 250);
-  --secondary-foreground: oklch(0.32 0.06 258);
+  --secondary: oklch(0.94 0.025 255);
+  --secondary-foreground: oklch(0.28 0.07 258);
 
-  --muted: oklch(0.965 0.012 250);
-  --muted-foreground: oklch(0.53 0.035 255);
+  --muted: oklch(0.955 0.018 255);
+  --muted-foreground: oklch(0.5 0.04 255);
 
-  --accent: oklch(0.62 0.17 250);
+  --accent: oklch(0.58 0.19 250);
   --accent-foreground: oklch(0.99 0.005 250);
 
-  --signal: oklch(0.52 0.19 258);
+  --signal: oklch(0.48 0.21 258);
   --signal-foreground: oklch(0.99 0.005 250);
 
   --good: oklch(0.55 0.12 190);
@@ -111,10 +111,10 @@
   --destructive: oklch(0.55 0.19 22);
   --destructive-foreground: oklch(0.99 0.005 250);
 
-  --border: oklch(0.905 0.018 250);
-  --rule: oklch(0.905 0.018 250);
-  --input: oklch(0.905 0.018 250);
-  --ring: oklch(0.52 0.19 258);
+  --border: oklch(0.885 0.025 255);
+  --rule: oklch(0.885 0.025 255);
+  --input: oklch(0.885 0.025 255);
+  --ring: oklch(0.48 0.21 258);
 
   --chart-1: oklch(0.52 0.19 258);
   --chart-2: oklch(0.62 0.17 250);
@@ -189,9 +189,22 @@
 /* Subtle paper texture used for hero and pull-out blocks */
 @utility bg-grain {
   background-image:
-    radial-gradient(circle at 12% 8%, oklch(0.52 0.19 258 / 0.16), transparent 46%),
-    radial-gradient(circle at 88% 0%, oklch(0.62 0.17 232 / 0.14), transparent 44%),
-    linear-gradient(to bottom, oklch(0.97 0.02 250 / 0.9), transparent 70%);
+    radial-gradient(circle at 12% 8%, oklch(0.48 0.21 258 / 0.18), transparent 46%),
+    radial-gradient(circle at 88% 0%, oklch(0.58 0.19 232 / 0.16), transparent 44%),
+    radial-gradient(circle at 50% 100%, oklch(0.48 0.21 258 / 0.1), transparent 50%),
+    linear-gradient(to bottom, oklch(0.96 0.025 255 / 0.95), oklch(0.985 0.006 255 / 0.85) 70%);
+}
+
+@utility bg-blue-section {
+  background-image:
+    radial-gradient(circle at 0% 0%, oklch(0.48 0.21 258 / 0.08), transparent 40%),
+    radial-gradient(circle at 100% 100%, oklch(0.58 0.19 250 / 0.07), transparent 42%),
+    linear-gradient(to bottom, oklch(0.98 0.01 255), oklch(0.99 0.005 255));
+}
+
+@utility blue-glow {
+  background: radial-gradient(circle, oklch(0.48 0.21 258 / 0.18), transparent 70%);
+  filter: blur(40px);
 }
 
 @utility bg-ledger {
