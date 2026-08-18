@@ -278,6 +278,15 @@ const reviews: Review[] = [
   },
 ];
 
+/** Short labels for navigation (sticky table of contents). */
+export const reviewIndex = reviews.map((r) => ({
+  rank: r.rank,
+  id: `rank-${r.rank}`,
+  short: r.name.split(" — ")[0].replace(/\s*\(.*\)\s*$/, ""),
+}));
+
+
+
 export function CourseReviews() {
   return (
     <div className="mt-8 space-y-12">
