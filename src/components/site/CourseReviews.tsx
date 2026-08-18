@@ -285,22 +285,22 @@ export function CourseReviews() {
         <article
           key={r.rank}
           id={`rank-${r.rank}`}
-          className="scroll-mt-24 rounded-2xl border border-border bg-card p-6 shadow-card sm:p-8"
+          className="surface-card animate-rise scroll-mt-28 p-6 sm:p-8"
         >
           <div className="flex flex-wrap items-start gap-4">
-            <div className="flex size-14 shrink-0 items-center justify-center rounded-xl bg-primary font-display text-2xl font-semibold text-primary-foreground">
+            <div className="flex size-14 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-accent font-display text-2xl font-semibold text-primary-foreground shadow-card">
               {r.rank}
             </div>
             <div className="min-w-0 flex-1">
               <h3 className="text-xl font-semibold leading-snug sm:text-2xl">{r.name}</h3>
               <p className="mt-1 text-sm text-muted-foreground">{r.provider}</p>
-              <Badge variant="outline" className="mt-3 border-accent bg-accent/15 text-xs">
+              <Badge variant="outline" className="mt-3 border-primary/30 bg-primary/8 text-xs text-primary">
                 Best for: {r.bestFor}
               </Badge>
             </div>
           </div>
 
-          <dl className="mt-6 grid gap-4 rounded-xl bg-muted/50 p-4 text-sm sm:grid-cols-2">
+          <dl className="mt-6 grid gap-4 rounded-xl border border-primary/15 bg-primary/5 p-5 text-sm sm:grid-cols-2">
             {[
               ["Indicative price", r.price],
               ["Duration", r.duration],
@@ -320,7 +320,7 @@ export function CourseReviews() {
           </div>
 
           <div className="mt-6 grid gap-5 lg:grid-cols-2">
-            <div className="rounded-xl border border-good/30 bg-good/6 p-5">
+            <div className="surface-card border-good/30 bg-good/5 p-5">
               <h4 className="text-base font-semibold">What it genuinely does well</h4>
               <ul className="mt-3 space-y-2 text-sm">
                 {r.strengths.map((s) => (
@@ -331,7 +331,7 @@ export function CourseReviews() {
                 ))}
               </ul>
             </div>
-            <div className="rounded-xl border border-warn/35 bg-warn/8 p-5">
+            <div className="surface-card border-warn/35 bg-warn/6 p-5">
               <h4 className="text-base font-semibold">
                 {r.rank === 1 ? "Limitations — stated as bluntly as for competitors" : "Limitations"}
               </h4>

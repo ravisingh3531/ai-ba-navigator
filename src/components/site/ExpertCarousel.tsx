@@ -54,8 +54,8 @@ export function ExpertCarousel() {
   const go = (delta: number) => setIndex((i) => (i + delta + experts.length) % experts.length);
 
   return (
-    <div className="my-8 overflow-hidden rounded-2xl border border-border bg-card shadow-card">
-      <div className="flex items-center justify-between gap-4 border-b border-border bg-secondary/60 px-5 py-3">
+    <div className="surface-card my-8 overflow-hidden">
+      <div className="flex items-center justify-between gap-4 border-b border-primary/15 bg-primary/6 px-5 py-3">
         <p className="eyebrow text-secondary-foreground">
           Reviewed by practitioners · {index + 1} / {experts.length}
         </p>
@@ -75,7 +75,7 @@ export function ExpertCarousel() {
       </div>
 
       <div className="flex flex-col gap-5 p-6 sm:flex-row">
-        <div className="flex size-20 shrink-0 items-center justify-center rounded-xl border border-dashed border-accent bg-accent/15 font-display text-xl font-semibold text-accent-foreground">
+        <div className="flex size-20 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/15 to-accent/20 font-display text-xl font-semibold text-primary ring-1 ring-primary/25">
           {expert.initials}
         </div>
         <div>

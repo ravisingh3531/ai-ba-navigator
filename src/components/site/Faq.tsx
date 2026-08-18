@@ -98,11 +98,22 @@ export const faqs: { q: string; a: string }[] = [
 
 export function Faq() {
   return (
-    <Accordion type="single" collapsible className="mt-6 w-full">
+    <Accordion type="single" collapsible className="mt-6 w-full space-y-3">
       {faqs.map((item, i) => (
-        <AccordionItem key={item.q} value={`faq-${i}`}>
-          <AccordionTrigger className="text-left text-base font-semibold">{item.q}</AccordionTrigger>
-          <AccordionContent className="text-sm leading-relaxed text-muted-foreground">
+        <AccordionItem
+          key={item.q}
+          value={`faq-${i}`}
+          className="surface-card border-b px-5 data-[state=open]:border-primary/40"
+        >
+          <AccordionTrigger className="text-left text-base font-semibold hover:text-primary hover:no-underline">
+            <span className="flex items-start gap-3">
+              <span className="mt-0.5 font-mono text-xs text-primary/70">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <span>{item.q}</span>
+            </span>
+          </AccordionTrigger>
+          <AccordionContent className="pl-8 text-sm leading-relaxed text-muted-foreground">
             {item.a}
           </AccordionContent>
         </AccordionItem>
@@ -110,3 +121,4 @@ export function Faq() {
     </Accordion>
   );
 }
+
