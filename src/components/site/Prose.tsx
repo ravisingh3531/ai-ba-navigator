@@ -15,13 +15,22 @@ export function Section({
   className?: string;
 }) {
   return (
-    <section id={id} className={cn("scroll-mt-24 border-t border-border py-14", className)}>
-      {eyebrow ? <p className="eyebrow mb-3">{eyebrow}</p> : null}
+    <section
+      id={id}
+      className={cn("hairline-top animate-rise scroll-mt-28 py-16 sm:py-20", className)}
+    >
+      {eyebrow ? (
+        <p className="eyebrow mb-3 inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/8 px-3 py-1 text-primary">
+          {eyebrow}
+        </p>
+      ) : null}
       <h2 className="text-balance text-3xl font-semibold leading-tight sm:text-4xl">{title}</h2>
+      <div className="mt-4 h-px w-24 bg-gradient-to-r from-primary to-transparent" />
       <div className="prose-editorial mt-6 max-w-none">{children}</div>
     </section>
   );
 }
+
 
 export function H3({ children, id }: { children: ReactNode; id?: string }) {
   return (
