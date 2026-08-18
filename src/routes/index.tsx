@@ -1073,6 +1073,7 @@ function Article() {
           id="careers"
           eyebrow="Section 7"
           title="Where AI Skills Actually Take a Business Analyst in India — Roles, Employers and Market Reality"
+          blue
         >
           <p>
             Compensation bands below are indicative ranges drawn from publicly reported market data
