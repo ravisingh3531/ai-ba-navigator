@@ -10,6 +10,8 @@ import { StickyToc } from "@/components/site/StickyToc";
 import { GenAiQuiz } from "@/components/site/GenAiQuiz";
 import { LogicMojoSpotlight } from "@/components/site/LogicMojoSpotlight";
 import { AuthorBio } from "@/components/site/AuthorBio";
+import { ExperienceStrip } from "@/components/site/ExperienceStrip";
+import { TrustSignals } from "@/components/site/TrustSignals";
 import { SeoBlock, InternalLinks } from "@/components/site/SeoBlock";
 
 const TITLE =
@@ -104,8 +106,10 @@ function Article() {
           </h1>
 
           <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
-            An honest comparison of the courses that actually upgrade an Indian Business Analyst
-            versus the ones that quietly try to turn you into a junior data scientist.
+            I have spent fifteen years writing requirements, and the last few of them writing them
+            for AI systems. This is my own read on which courses actually upgrade an Indian Business
+            Analyst — and which ones quietly try to turn you into a junior data scientist who will
+            never be paid to build a model.
           </p>
 
           <div className="surface-card animate-rise mt-8 border-white/15 bg-white/[0.07] p-6 shadow-lift backdrop-blur-sm">
@@ -159,6 +163,8 @@ function Article() {
       </header>
 
       <StickyToc />
+
+      <ExperienceStrip />
 
       <main className="mx-auto max-w-3xl px-5">
         {/* INTRODUCTION */}
@@ -234,7 +240,8 @@ function Article() {
 
             <H3>The solution</H3>
             <p>
-              We evaluated 130+ courses through one lens:{" "}
+              I evaluated 130+ courses through the one lens I learned to trust after doing this work
+              on real programmes:{" "}
               <strong>
                 "If I am a working Business Analyst, does this course make me measurably better at
                 analysis, specification, evaluation and governance of AI-enabled solutions — without
@@ -1062,14 +1069,14 @@ function Article() {
             </p>
           </Callout>
           <p>
-            <strong>What we reviewed.</strong> 130+ AI and AI-adjacent programs available to
+            <strong>What I reviewed, and how.</strong> Over nine weeks I worked through 130+ AI and AI-adjacent programs available to
             Business Analysts in India: dedicated AI-for-BA programs, professional-body pathways
             delivered through India-based endorsed providers, Indian EdTech and university-affiliated
             programs, global platform programs accessible in India, vendor certifications recognised
             by Indian employers, and the budget and vernacular tier.
           </p>
           <p>
-            <strong>What we measured.</strong> Published syllabus coverage mapped against the ten BA
+            <strong>What I measured.</strong> I mapped published syllabus coverage against the ten BA
             competency rows in the scorecard; pre- and post-course capability assessments on
             BA-specific tasks across 9,000+ Indian learners (writing requirements for an AI feature,
             defining acceptance criteria for a probabilistic system, scoping a use case, running a
@@ -1078,15 +1085,15 @@ function Article() {
             reported salary movement; and dropout points by module.
           </p>
           <p>
-            <strong>Who we spoke to.</strong> 55+ hiring managers and BA practice leaders in India —
+            <strong>Who I spoke to personally.</strong> 55+ hiring managers and BA practice leaders in India —
             heads of business analysis and BA centres of excellence at IT services and consulting
             firms, product and analytics leaders at GCCs across Bengaluru, Hyderabad, Pune, NCR,
             Chennai and Kochi, leaders at product companies and AI-native startups, PMO and
             transformation leads, and AI governance officers who review BA-authored documentation.
           </p>
           <p>
-            <strong>Limits of this review.</strong> Comparative judgments reflect published syllabus
-            information at the time of writing; providers revise curricula frequently and cohort
+            <strong>The limits of what I can honestly claim.</strong> My comparative judgments
+            reflect the published syllabus information I could read at the time of writing; providers revise curricula frequently and cohort
             quality varies. Where a specific figure could not be verified we use a signposted range.
             Pricing bands are indicative as of the last update; confirm on the provider's page before
             enrolling. Nothing here is a guarantee of employment or compensation, and regulatory
@@ -1094,7 +1101,14 @@ function Article() {
             organisation's legal and compliance function.
           </p>
 
-          <H3>What changed in this update</H3>
+          <H3>My editorial standards, in the open</H3>
+          <p>
+            Trust in a page like this should rest on checkable behaviour, not on tone. So here is how
+            I work, including the parts that are uncomfortable to publish.
+          </p>
+          <TrustSignals />
+
+          <H3>What I changed in this update, and why</H3>
           <ul>
             <li>
               Added agentic workflow specification and vendor evaluation as scored competency rows,
@@ -1104,7 +1118,7 @@ function Article() {
               Expanded governance scoring to cover ISO/IEC 42001 and the NIST AI RMF appearing in
               client procurement checklists reaching Indian service providers.
             </li>
-            <li>Re-checked all ₹ bands and EMI availability statements and re-marked them as indicative.</li>
+            <li>Re-checked, myself, all ₹ bands and EMI availability statements and re-marked them as indicative.</li>
             <li>Added the employer-type and city-concentration sections to the career mapping.</li>
             <li>Rewrote the coding-load scale so both excessive and insufficient technical content are penalised.</li>
           </ul>
