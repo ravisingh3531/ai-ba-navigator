@@ -1268,6 +1268,7 @@ function Article() {
           id="checklist"
           eyebrow="Section 10"
           title="How to Audit Any AI Course for Business Analysts Before You Pay"
+          blue
         >
           <div className="my-6 grid gap-5 md:grid-cols-2">
             <FlagList
