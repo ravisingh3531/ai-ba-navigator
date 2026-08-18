@@ -1,7 +1,8 @@
 import { Badge } from "@/components/ui/badge";
 import { Callout } from "./Prose";
 import { allTopics, beginnerByRank, type Coverage } from "./beginnerDetails";
-import { Star, GraduationCap, Users, Route as RouteIcon, Briefcase, FolderGit2 } from "lucide-react";
+import { fieldNoteByRank } from "./fieldNotes";
+import { Star, NotebookPen, GraduationCap, Users, Route as RouteIcon, Briefcase, FolderGit2 } from "lucide-react";
 
 type Review = {
   rank: number;
@@ -411,6 +412,32 @@ function BeginnerPanel({ rank }: { rank: number }) {
   );
 }
 
+function AuthorFieldNote({ rank }: { rank: number }) {
+  const n = fieldNoteByRank.get(rank);
+  if (!n) return null;
+  return (
+    <div className="mt-6 rounded-xl border border-accent/30 bg-accent/[0.05] p-5 sm:p-6">
+      <p className="flex items-center gap-2 font-semibold">
+        <NotebookPen className="size-4 text-accent" aria-hidden />
+        From my own review notes — first-hand
+      </p>
+      <dl className="mt-4 space-y-4 text-sm">
+        {[
+          ["How I checked this one myself", n.howIChecked],
+          ["What I saw with my own eyes", n.whatISaw],
+          ["The learners I actually watched", n.whoIWatched],
+          ["The call I will stand behind", n.myCall],
+        ].map(([k, v]) => (
+          <div key={k}>
+            <dt className="eyebrow text-accent">{k}</dt>
+            <dd className="mt-1 leading-relaxed">{v}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  );
+}
+
 export function CourseReviews() {
 
   return (
@@ -449,7 +476,7 @@ export function CourseReviews() {
           </dl>
 
           <div className="prose-editorial mt-6">
-            <h4 className="text-base font-semibold">Our verdict</h4>
+            <h4 className="text-base font-semibold">My verdict</h4>
             <p>{r.verdict}</p>
           </div>
 
@@ -491,16 +518,19 @@ export function CourseReviews() {
             </p>
           </div>
 
+          <AuthorFieldNote rank={r.rank} />
+
           <BeginnerPanel rank={r.rank} />
 
           {r.rank === 1 ? (
             <Callout tone="signal" label="Disclosure">
               <p>
-                LogicMojo publishes this comparison and sells the course ranked first. We have
-                published every scoring dimension and its weight so you can re-weight them against
-                your own priorities, and the limitations above are stated at the same level of
-                detail as for every competitor. Several entries below are better choices for
-                specific readers, and we say so in their reviews.
+                I work with LogicMojo, which publishes this comparison and sells the course ranked
+                first — and I wrote that course's BA track. I have published every scoring dimension
+                and its weight so you can re-weight them against your own priorities, and I have
+                stated the limitations above at the same level of detail as for every competitor.
+                For several readers the entries below are the better purchase, and I say so in their
+                reviews rather than burying it here.
               </p>
             </Callout>
           ) : null}
