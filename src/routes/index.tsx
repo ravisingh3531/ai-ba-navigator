@@ -959,6 +959,7 @@ function Article() {
           id="skills"
           eyebrow="Section 6"
           title="The AI Skills a Business Analyst Actually Needs (And the Ones You Can Safely Ignore)"
+          blue
         >
           <div className="my-6 grid gap-5 lg:grid-cols-3">
             <FlagList
