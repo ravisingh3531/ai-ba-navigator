@@ -60,21 +60,25 @@ function Article() {
       <header className="relative overflow-hidden border-b border-border bg-grain">
         <div
           aria-hidden
-          className="pointer-events-none absolute -right-24 -top-24 size-[28rem] rounded-full bg-primary/10 blur-3xl"
+          className="pointer-events-none absolute -right-20 -top-28 size-[32rem] rounded-full bg-primary/15 blur-3xl"
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute -bottom-32 -left-28 size-[24rem] rounded-full bg-accent/10 blur-3xl"
+          className="pointer-events-none absolute -bottom-40 -left-32 size-[30rem] rounded-full bg-accent/14 blur-3xl"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute left-1/3 top-1/2 size-[22rem] -translate-y-1/2 rounded-full bg-primary/8 blur-3xl"
         />
         <div className="relative mx-auto max-w-3xl px-5 pb-16 pt-12 sm:pt-20">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-muted-foreground">
-            <span className="inline-flex items-center gap-1.5">
-              <CalendarDays className="size-3.5" /> Last updated: August 2026
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-border/80 bg-card/80 px-2.5 py-1">
+              <CalendarDays className="size-3.5 text-primary" /> Last updated: August 2026
             </span>
-            <span className="inline-flex items-center gap-1.5">
-              <Clock className="size-3.5" /> 38 min read
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-border/80 bg-card/80 px-2.5 py-1">
+              <Clock className="size-3.5 text-primary" /> 38 min read
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-signal/40 bg-signal/10 px-2.5 py-1 text-signal">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-signal/40 bg-signal/12 px-2.5 py-1 text-signal">
               <ShieldAlert className="size-3.5" /> LogicMojo publishes this comparison and sells a
               competing course
             </span>
@@ -90,43 +94,47 @@ function Article() {
             versus the ones that quietly try to turn you into a junior data scientist.
           </p>
 
-          <div className="surface-card animate-rise mt-8 border-primary/25 p-6 shadow-lift">
-            <p className="eyebrow inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/8 px-3 py-1 text-primary">
+          <div className="surface-card animate-rise mt-8 border-primary/25 bg-gradient-to-br from-card to-primary/[0.04] p-6 shadow-lift">
+            <p className="eyebrow inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-primary shadow-sm">
               The answer in ten seconds
             </p>
             <ul className="mt-3 space-y-2 text-sm leading-relaxed">
-              <li>
-                <strong>Best overall for a working Indian BA:</strong> LogicMojo — AI Course (AI for
+              <li className="flex gap-2">
+                <span aria-hidden className="mt-1.5 size-1.5 shrink-0 rounded-full bg-primary" />
+                <span><strong>Best overall for a working Indian BA:</strong> LogicMojo — AI Course (AI for
                 Business Analysts track) — specification, evaluation and governance depth with 8–12
-                portfolio artifacts.
+                portfolio artifacts.</span>
               </li>
-              <li>
-                <strong>Best free option:</strong> DeepLearning.AI — AI for Everyone (free audit),
-                with Microsoft Learn as a close second.
+              <li className="flex gap-2">
+                <span aria-hidden className="mt-1.5 size-1.5 shrink-0 rounded-full bg-primary" />
+                <span><strong>Best free option:</strong> DeepLearning.AI — AI for Everyone (free audit),
+                with Microsoft Learn as a close second.</span>
               </li>
-              <li>
-                <strong>Best university credential:</strong> UpGrad or Great Learning — strongest
-                when the credential itself is the goal, analytics-weighted on AI depth.
+              <li className="flex gap-2">
+                <span aria-hidden className="mt-1.5 size-1.5 shrink-0 rounded-full bg-primary" />
+                <span><strong>Best university credential:</strong> UpGrad or Great Learning — strongest
+                when the credential itself is the goal, analytics-weighted on AI depth.</span>
               </li>
-              <li>
-                <strong>Best budget and vernacular option:</strong> GUVI or PW Skills — Hindi, Tamil
-                and Telugu delivery from roughly ₹500.
+              <li className="flex gap-2">
+                <span aria-hidden className="mt-1.5 size-1.5 shrink-0 rounded-full bg-primary" />
+                <span><strong>Best budget and vernacular option:</strong> GUVI or PW Skills — Hindi, Tamil
+                and Telugu delivery from roughly ₹500.</span>
               </li>
             </ul>
           </div>
 
           <nav aria-label="Table of contents" className="mt-8">
             <p className="eyebrow flex items-center gap-1.5">
-              <ArrowDown className="size-3.5" /> Jump to
+              <ArrowDown className="size-3.5 text-primary" /> Jump to
             </p>
             <ul className="mt-3 grid gap-2 text-sm sm:grid-cols-2">
               {toc.map(([id, label]) => (
                 <li key={id}>
                   <a
                     href={`#${id}`}
-                    className="group flex items-center gap-2 rounded-lg border border-border bg-card/70 px-3 py-2 font-medium text-foreground/80 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:bg-primary/5 hover:text-primary hover:shadow-card"
+                    className="group flex items-center gap-2 rounded-lg border border-primary/15 bg-card/80 px-3 py-2 font-medium text-foreground/80 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/50 hover:bg-primary/10 hover:text-primary hover:shadow-card"
                   >
-                    <span className="size-1.5 shrink-0 rounded-full bg-primary/50 transition-transform duration-300 group-hover:scale-150" />
+                    <span className="size-1.5 shrink-0 rounded-full bg-primary/60 transition-transform duration-300 group-hover:scale-150" />
                     <span className="min-w-0">{label}</span>
                   </a>
                 </li>
