@@ -1197,7 +1197,7 @@ function Article() {
         </Section>
 
         {/* ROADMAP */}
-        <Section id="roadmap" eyebrow="Section 8" title="From Course to Credibility: A 90-Day Application Plan">
+        <Section id="roadmap" eyebrow="Section 8" title="From Course to Credibility: A 90-Day Application Plan" blue>
           <div className="my-6 grid gap-5 md:grid-cols-3">
             {[
               {
