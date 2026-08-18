@@ -103,17 +103,17 @@ export function Faq() {
         <AccordionItem
           key={item.q}
           value={`faq-${i}`}
-          className="surface-card border-b px-5 data-[state=open]:border-primary/40"
+          className="surface-card border-b border-primary/15 bg-gradient-to-r from-card to-primary/[0.03] px-5 data-[state=open]:border-primary/50"
         >
           <AccordionTrigger className="text-left text-base font-semibold hover:text-primary hover:no-underline">
             <span className="flex items-start gap-3">
-              <span className="mt-0.5 font-mono text-xs text-primary/70">
+              <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-primary/10 font-mono text-xs font-bold text-primary">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <span>{item.q}</span>
             </span>
           </AccordionTrigger>
-          <AccordionContent className="pl-8 text-sm leading-relaxed text-muted-foreground">
+          <AccordionContent className="pl-11 text-sm leading-relaxed text-muted-foreground">
             {item.a}
           </AccordionContent>
         </AccordionItem>
