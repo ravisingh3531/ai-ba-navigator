@@ -101,7 +101,7 @@ export function StickyToc() {
       {/* Desktop rail */}
       <nav
         aria-label="Table of contents"
-        className="pointer-events-none fixed left-4 top-0 z-40 hidden h-screen w-60 items-center xl:flex 2xl:w-72"
+        className="pointer-events-none fixed left-4 top-0 z-40 hidden h-screen w-60 items-center 2xl:flex"
       >
         <div className="pointer-events-auto max-h-[80vh] w-full overflow-y-auto rounded-xl border border-primary/15 bg-card/85 p-3 shadow-card backdrop-blur-md">
           <p className="eyebrow px-3 pb-2 text-primary">On this page</p>
@@ -111,7 +111,7 @@ export function StickyToc() {
       </nav>
 
       {/* Mobile / tablet sticky bar */}
-      <div className="sticky top-0 z-40 border-b border-primary/15 bg-card/90 backdrop-blur-md xl:hidden">
+      <div className="sticky top-0 z-40 border-b border-primary/15 bg-card/90 backdrop-blur-md 2xl:hidden">
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
